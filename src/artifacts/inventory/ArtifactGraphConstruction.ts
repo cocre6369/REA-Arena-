@@ -357,7 +357,8 @@ export const classifyArtifactPath = (
   const lower = path.toLowerCase();
   if (lower.endsWith(".map"))
     return { kind: "source-map", format: "source-map" };
-  if (/\.(?:m?js|cjs)$/u.test(lower))
+  // Match the source extensions the JavaScript analyzer reads.
+  if (/\.(?:cjs|cts|mjs|mts|js|jsx|ts|tsx)$/u.test(lower))
     return { kind: "javascript", format: "javascript-bundle" };
   if (/\.framework(?:\/|$)/u.test(lower))
     return { kind: "framework", format: "file" };
