@@ -120,6 +120,7 @@ const nativeRows = (
     unresolved_calls: dossier.unresolved_calls,
     referenced_strings: dossier.referenced_strings,
     referenced_names: dossier.referenced_names,
+    swift_string_literals: dossier.swift_string_literals,
     value_flow_operations: flow?.operations,
     value_flow_def_use: flow?.def_use,
     value_flow_effects: flow?.effects,
@@ -204,7 +205,8 @@ export const projectNativeFunctionView = (
       singleton({
         available: false,
         // Only value-flow facets inherit the value-flow failure reason; an
-        // older dossier simply has no unresolved_calls record.
+        // older dossier simply has no unresolved_calls record, and a target
+        // whose provider does not decode Swift literals has no such record.
         reason:
           view.facet.startsWith("value_flow_") && flow?.available === false
             ? flow.reason

@@ -167,6 +167,23 @@ export const stringAndNameProjection = (
         value,
       }),
     ),
+    ...(snapshot.dossier.swift_string_literals ?? []).map(
+      ({
+        source_address: sourceAddress,
+        value,
+        representation,
+        registers,
+      }) => ({
+        kind: "swift_string",
+        source_offset: relativeAddress(
+          sourceAddress,
+          snapshot.dossier.procedure.address,
+        ),
+        value,
+        representation,
+        registers,
+      }),
+    ),
   ];
   return values.some(({ source_offset: offset }) => offset === null)
     ? null

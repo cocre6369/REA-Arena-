@@ -572,6 +572,71 @@ describe("function comparison", () => {
   });
 });
 
+describe("function comparison Swift string literals", () => {
+  const withLiterals = (base: "0x1000" | "0x2000", values: readonly string[]) =>
+    functionDossierSchema.parse({
+      ...dossier("return 0;", base),
+      swift_string_literals: values.map((value) => ({
+        source_address: base,
+        value,
+        representation: "small" as const,
+        address: null,
+        registers: ["x0", "x1"] as const,
+        words: ["0x0", "0xe"] as const,
+      })),
+    });
+  const stringsDimension = (
+    leftDigit: string,
+    left: ReturnType<typeof withLiterals> | ReturnType<typeof dossier>,
+    rightDigit: string,
+    right: ReturnType<typeof withLiterals> | ReturnType<typeof dossier>,
+  ) =>
+    compareFunctions(
+      observe(leftDigit, left),
+      observe(rightDigit, right),
+    ).dimensions.find(({ dimension }) => dimension === "strings_names");
+
+  it("treats differing decoded literals as a strings and names change", () => {
+    expect(
+      stringsDimension(
+        "1",
+        withLiterals("0x1000", ["SleepDisabled"]),
+        "2",
+        withLiterals("0x2000", ["Holding awake"]),
+      ),
+    ).toMatchObject({ status: "changed" });
+  });
+
+  it("matches the same decoded literal after the function is relocated", () => {
+    expect(
+      stringsDimension(
+        "3",
+        withLiterals("0x1000", ["SleepDisabled"]),
+        "4",
+        withLiterals("0x2000", ["SleepDisabled"]),
+      ),
+    ).toMatchObject({ status: "unchanged" });
+  });
+
+  it("keeps strings and names unknown when only one dossier recorded Swift literals", () => {
+    expect(
+      stringsDimension(
+        "5",
+        withLiterals("0x1000", []),
+        "6",
+        dossier("return 0;", "0x2000"),
+      ),
+    ).toMatchObject({
+      status: "unknown",
+      left_count: 0,
+      right_count: null,
+      limitations: [
+        "Swift String literal coverage differs; one dossier did not record decoded literals.",
+      ],
+    });
+  });
+});
+
 const expectInlineComparisonEvidence = (
   result: ReturnType<typeof compareFunctions>,
 ): void => {

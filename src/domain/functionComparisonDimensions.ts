@@ -139,6 +139,18 @@ const compareStringsAndNames = (
   right: FunctionSnapshot,
   context: ComparisonContext,
 ): FunctionDimension => {
+  const leftRecorded = left.dossier.swift_string_literals !== undefined;
+  const rightRecorded = right.dossier.swift_string_literals !== undefined;
+  if (leftRecorded !== rightRecorded)
+    return unresolvedDimension({
+      dimension: "strings_names",
+      links: context.links,
+      leftCount: recordedStringFactCount(left),
+      rightCount: recordedStringFactCount(right),
+      limitations: [
+        "Swift String literal coverage differs; one dossier did not record decoded literals.",
+      ],
+    });
   const leftValues = stringAndNameProjection(left);
   const rightValues = stringAndNameProjection(right);
   if (leftValues === null || rightValues === null)
@@ -153,6 +165,13 @@ const compareStringsAndNames = (
     });
   return compareValues("strings_names", leftValues, rightValues, context);
 };
+
+const recordedStringFactCount = (snapshot: FunctionSnapshot): number | null =>
+  snapshot.dossier.swift_string_literals === undefined
+    ? null
+    : snapshot.dossier.referenced_strings.length +
+      snapshot.dossier.referenced_names.length +
+      snapshot.dossier.swift_string_literals.length;
 
 const compareReferences = (
   left: FunctionSnapshot,
