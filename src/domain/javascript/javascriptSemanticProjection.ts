@@ -1,4 +1,5 @@
 import * as t from "@babel/types";
+import { typescriptRequireImport } from "./typescriptRequireImport.js";
 
 import type {
   JavaScriptSemanticBinding,
@@ -69,7 +70,21 @@ export const collectSemanticModuleLink = (
   node: t.Node,
   state: JavaScriptSemanticAnalysisState,
 ): void => {
-  if (t.isImportDeclaration(node)) collectImports(node, state);
+  const imported = typescriptRequireImport(node);
+  if (imported !== null)
+    addModuleLink(
+      state,
+      {
+        kind: "require",
+        specifier: imported.specifier,
+        importedName: "*",
+        localName: imported.name.name,
+        exportedName: null,
+        location: range(node),
+      },
+      node,
+    );
+  else if (t.isImportDeclaration(node)) collectImports(node, state);
   else if (t.isExportAllDeclaration(node))
     addModuleLink(
       state,

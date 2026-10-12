@@ -423,6 +423,7 @@ const moduleFormat = (
   ir: JavaScriptModuleSemanticIr,
 ): "commonjs" | "esm" | "mixed" | "unknown" => {
   const extension = posix.extname(path).toLowerCase();
+  if (extension === ".mts") return "esm";
   if (extension === ".mjs") return "esm";
   if (extension === ".cjs") return "commonjs";
   const esm = ir.moduleLinks.some(({ kind }) =>

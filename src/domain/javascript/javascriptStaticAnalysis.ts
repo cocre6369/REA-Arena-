@@ -1,4 +1,5 @@
 import * as t from "@babel/types";
+import { typescriptRequireImport } from "./typescriptRequireImport.js";
 import { collectElectronWrappedCallPaths } from "./electronWrappedCallPaths.js";
 import {
   ELECTRON_IDENTITY_LIMITATION,
@@ -238,7 +239,14 @@ const inspectNode = (
   } else if (t.isOptionalCallExpression(node)) {
     inspectCall(source, node, findings);
   } else if (t.isNewExpression(node)) inspectCall(source, node, findings);
-  if (
+  const imported = typescriptRequireImport(node);
+  if (imported !== null)
+    addReference(findings, {
+      node,
+      kind: "require",
+      specifier: imported.specifier,
+    });
+  else if (
     (t.isImportDeclaration(node) || t.isExportAllDeclaration(node)) &&
     node.source !== undefined
   )
