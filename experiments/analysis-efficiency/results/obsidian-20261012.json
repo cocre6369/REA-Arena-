@@ -1,0 +1,718 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "artifact": "obsidian.asar",
+  "baseline_revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+  "candidate_revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+  "order": [
+    "obsidian-complete-pair1",
+    "obsidian-summary-pair1",
+    "obsidian-summary-pair2",
+    "obsidian-complete-pair2"
+  ],
+  "comparisons": [
+    {
+      "artifact": "obsidian.asar",
+      "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+      "settings_match": true,
+      "setting_differences": [],
+      "facts_match": true,
+      "fact_differences": [],
+      "workflow_failures": [null, null],
+      "left": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "delivery": "complete",
+        "elapsed_ms": 11035.862554000001,
+        "catalog_json_utf8_bytes": 2326609,
+        "calls": 3,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 937404,
+        "client_before_send_ms": 5642.467816000002,
+        "transport_roundtrip_ms": 1836.367780999999,
+        "client_after_receive_ms": 13.234619000000748
+      },
+      "right": {
+        "revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+        "runtime_files_sha256": "43264da8dad2d367121827711f203ee39d57689bfe908ed2fec0d9096447c9fe",
+        "delivery": "summary",
+        "elapsed_ms": 10229.26358,
+        "catalog_json_utf8_bytes": 2370505,
+        "calls": 4,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 16322,
+        "client_before_send_ms": 5532.158095999999,
+        "transport_roundtrip_ms": 1580.7388140000003,
+        "client_after_receive_ms": 25.614587999998548
+      },
+      "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+    },
+    {
+      "artifact": "obsidian.asar",
+      "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+      "settings_match": true,
+      "setting_differences": [],
+      "facts_match": true,
+      "fact_differences": [],
+      "workflow_failures": [null, null],
+      "left": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "delivery": "complete",
+        "elapsed_ms": 10565.371219,
+        "catalog_json_utf8_bytes": 2326609,
+        "calls": 3,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 937404,
+        "client_before_send_ms": 5339.625122,
+        "transport_roundtrip_ms": 1617.366095999998,
+        "client_after_receive_ms": 24.421838000002026
+      },
+      "right": {
+        "revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+        "runtime_files_sha256": "43264da8dad2d367121827711f203ee39d57689bfe908ed2fec0d9096447c9fe",
+        "delivery": "summary",
+        "elapsed_ms": 10180.61921,
+        "catalog_json_utf8_bytes": 2370505,
+        "calls": 4,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 16322,
+        "client_before_send_ms": 5396.121655999999,
+        "transport_roundtrip_ms": 1644.840083000001,
+        "client_after_receive_ms": 25.11599799999931
+      },
+      "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+    }
+  ],
+  "verified_selected_facts": {
+    "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+    "manifest": {
+      "manifest_id": "agm_f14eba8a5c6c5f36b29b3e6df89e88e0b9453734d0e20d40e7af8de19a8be460",
+      "root_artifact_id": "art_1e706d7a33a4c2894f8f6cd43c0c05d59b55a85a26409ed798d61f009c31de3a",
+      "root_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+      "root_format": "asar",
+      "graph_sha256": "36a44bd2c52a12c6773afba5c6e16943ae149855029666d201b97cab34d1db77",
+      "node_count": 397,
+      "occurrence_count": 397,
+      "edge_count": 396
+    },
+    "source_complete": true,
+    "entry_kind_counts": {
+      "file": 369,
+      "directory": 28,
+      "symlink": 0,
+      "slice": 0
+    },
+    "requested_paths": [
+      {
+        "occurrence_id": "occ_839f7aa14abf21d836a3916667d4da1775c61a9859bc007780f053c53e75a3d9",
+        "artifact_id": "art_ac287efbb299ba9940b99d493dbd5a66d95e1e551e184260eee273db5037f0f7",
+        "parent_occurrence_id": "occ_da6fce4b8550348d7c7549e2ca320e694dc0684e35cd48ec2d5a73f60ff817da",
+        "logical_path": "main.js",
+        "entry_kind": "file",
+        "artifact_kind": "javascript",
+        "artifact_format": "javascript-bundle",
+        "declared_size": 203702,
+        "compressed_size": null,
+        "executable": false,
+        "encrypted": false,
+        "hash_status": "verified",
+        "source_location": null,
+        "limitations": []
+      },
+      {
+        "occurrence_id": "occ_86d81ff656dcda0e4438d7ab062735ba1e2785523bd3db9ffb4795bf41c59d5d",
+        "artifact_id": "art_11d385925bb6d5aef5c1928f5ad031c83f40c1ff1b251df7e767e8a5e8d30ed3",
+        "parent_occurrence_id": "occ_da6fce4b8550348d7c7549e2ca320e694dc0684e35cd48ec2d5a73f60ff817da",
+        "logical_path": "package.json",
+        "entry_kind": "file",
+        "artifact_kind": "resource",
+        "artifact_format": "file",
+        "declared_size": 260,
+        "compressed_size": null,
+        "executable": false,
+        "encrypted": false,
+        "hash_status": "verified",
+        "source_location": null,
+        "limitations": []
+      }
+    ],
+    "inventory_evidence_ids": [
+      "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed"
+    ],
+    "integrity_contradictions": [],
+    "coverage": {
+      "status": "complete-within-substeps",
+      "substeps_completed": 1,
+      "observations_retained": 1,
+      "observations_omitted": 0,
+      "hypotheses_retained": 1,
+      "hypotheses_omitted": 0,
+      "unexplored_branches_retained": 1,
+      "unexplored_branches_omitted": 0,
+      "next_probes_retained": 1,
+      "next_probes_omitted": 0
+    },
+    "unexplored_branches": [
+      {
+        "branch_id": "aib_f9d25a2dcb994e2a45fdd99d4a3dc6b1576dde7fd5e6f56292dd0e515ef35f8a",
+        "reason": "format-specific-analysis-required",
+        "detail": "analyze_javascript_application was not run by provider-neutral artifact inspection.",
+        "next_probe": {
+          "operation": "analyze_javascript_application",
+          "rationale": "Recover bounded JavaScript modules, source maps, Electron boundaries, and application relationships.",
+          "authority": "ast-static-analysis"
+        },
+        "evidence_id": "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed"
+      }
+    ],
+    "limitations": [
+      "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics."
+    ]
+  },
+  "runs": [
+    {
+      "name": "obsidian-complete-pair1",
+      "report": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/baseline-runtime",
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "delivery": "complete",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "cdb8bb4a72deb445f7c82a0388f9d40ce7ffc53f5aa24f5523a8fbc387338629",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2257.92206,
+        "catalog_ms": 817.8415800000002,
+        "catalog_json_utf8_bytes": 2326609,
+        "catalog_input_definition_utf8_bytes": 494207,
+        "elapsed_ms": 11035.862554000001,
+        "calls": [
+          {
+            "name": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+            },
+            "elapsed_ms": 6014.729308,
+            "client_before_send_ms": 5641.816656000001,
+            "transport_roundtrip_ms": 371.31184199999916,
+            "client_after_receive_ms": 1.6008099999999104,
+            "client_result_json_utf8_bytes": 538,
+            "runner_encoding_ms": 0.11023999999997613,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_artifact",
+            "arguments": {},
+            "elapsed_ms": 1471.2776780000004,
+            "client_before_send_ms": 0.3407900000001973,
+            "transport_roundtrip_ms": 1459.9705190000004,
+            "client_after_receive_ms": 10.966368999999759,
+            "client_result_json_utf8_bytes": 936774,
+            "runner_encoding_ms": 2.8665689999997994,
+            "producer_evidence_id": "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 6.05160000000069,
+                "progress": 1,
+                "message": "inspect_artifact: started"
+              },
+              {
+                "elapsed_ms": 1356.2443540000004,
+                "progress": 2,
+                "message": "inspect_artifact.inventory: inventory substep completed"
+              },
+              {
+                "elapsed_ms": 1362.7375339999999,
+                "progress": 3,
+                "message": "inspect_artifact: completed"
+              }
+            ]
+          },
+          {
+            "name": "close_binary",
+            "arguments": {},
+            "elapsed_ms": 6.0632300000015675,
+            "client_before_send_ms": 0.31037000000105763,
+            "transport_roundtrip_ms": 5.085419999999431,
+            "client_after_receive_ms": 0.6674400000010792,
+            "client_result_json_utf8_bytes": 92,
+            "runner_encoding_ms": 0.018509999999878346,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resources": {
+        "resource_scope": "rea-efficiency-c14272f516d843ac9150d22c9df883dd.scope",
+        "peak_cgroup_bytes_sampled": 770248704,
+        "elapsed_seconds": 12.3,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 18,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 11986831,
+          "user_usec": 10114747,
+          "system_usec": 1872084,
+          "nr_periods": 122,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    {
+      "name": "obsidian-summary-pair1",
+      "report": {
+        "revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/phase1-runtime",
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "delivery": "summary",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "cdb8bb4a72deb445f7c82a0388f9d40ce7ffc53f5aa24f5523a8fbc387338629",
+        "runtime_files_sha256": "43264da8dad2d367121827711f203ee39d57689bfe908ed2fec0d9096447c9fe",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2096.166499,
+        "catalog_ms": 707.9039760000001,
+        "catalog_json_utf8_bytes": 2370505,
+        "catalog_input_definition_utf8_bytes": 496699,
+        "elapsed_ms": 10229.26358,
+        "calls": [
+          {
+            "name": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+            },
+            "elapsed_ms": 5715.069797,
+            "client_before_send_ms": 5531.330485,
+            "transport_roundtrip_ms": 182.28523200000018,
+            "client_after_receive_ms": 1.4540799999995215,
+            "client_result_json_utf8_bytes": 538,
+            "runner_encoding_ms": 0.08047999999871536,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_artifact",
+            "arguments": {
+              "detail": "summary"
+            },
+            "elapsed_ms": 1363.5262139999995,
+            "client_before_send_ms": 0.2794190000004164,
+            "transport_roundtrip_ms": 1355.2395359999991,
+            "client_after_receive_ms": 8.007258999999976,
+            "client_result_json_utf8_bytes": 7624,
+            "runner_encoding_ms": 0.063970999999583,
+            "producer_evidence_id": "ev_023c4e1aa3ee14be77b9097ab94769e7b2b66f62eae37f826fb8835334afdd67",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 6.326178999999684,
+                "progress": 1,
+                "message": "inspect_artifact: started"
+              },
+              {
+                "elapsed_ms": 1230.1102609999998,
+                "progress": 2,
+                "message": "inspect_artifact.inventory: inventory substep completed"
+              },
+              {
+                "elapsed_ms": 1242.8931699999994,
+                "progress": 3,
+                "message": "inspect_artifact: completed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_26a8e15631bd04b0191b861f1db99b441a30c213f2090a6efb41a3168fca87e0"
+              },
+              "view": {
+                "kind": "inventory",
+                "collection": "occurrences",
+                "logical_paths": ["package.json", "main.js", "preload.js"],
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 54.06363699999929,
+            "client_before_send_ms": 0.30242099999850325,
+            "transport_roundtrip_ms": 38.43631700000151,
+            "client_after_receive_ms": 15.324898999999277,
+            "client_result_json_utf8_bytes": 8068,
+            "runner_encoding_ms": 0.054969000000710366,
+            "producer_evidence_id": "ev_de3e629669c89b539dc8527fc156a707bcb169b252fe702dc877850a29d80551",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "close_binary",
+            "arguments": {},
+            "elapsed_ms": 5.851849999999104,
+            "client_before_send_ms": 0.24577099999987695,
+            "transport_roundtrip_ms": 4.777728999999454,
+            "client_after_receive_ms": 0.828349999999773,
+            "client_result_json_utf8_bytes": 92,
+            "runner_encoding_ms": 0.018529999999373103,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resources": {
+        "resource_scope": "rea-efficiency-478012b86af8450a9ce0cc433f3e932a.scope",
+        "peak_cgroup_bytes_sampled": 747925504,
+        "elapsed_seconds": 11.402,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 16,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 11241848,
+          "user_usec": 10270595,
+          "system_usec": 971252,
+          "nr_periods": 113,
+          "nr_throttled": 3,
+          "throttled_usec": 84,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    {
+      "name": "obsidian-summary-pair2",
+      "report": {
+        "revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/phase1-runtime",
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "delivery": "summary",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "cdb8bb4a72deb445f7c82a0388f9d40ce7ffc53f5aa24f5523a8fbc387338629",
+        "runtime_files_sha256": "43264da8dad2d367121827711f203ee39d57689bfe908ed2fec0d9096447c9fe",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2111.29241,
+        "catalog_ms": 711.802036,
+        "catalog_json_utf8_bytes": 2370505,
+        "catalog_input_definition_utf8_bytes": 496699,
+        "elapsed_ms": 10180.61921,
+        "calls": [
+          {
+            "name": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+            },
+            "elapsed_ms": 5584.913216999999,
+            "client_before_send_ms": 5395.244546,
+            "transport_roundtrip_ms": 188.04799099999946,
+            "client_after_receive_ms": 1.620679999999993,
+            "client_result_json_utf8_bytes": 538,
+            "runner_encoding_ms": 0.08401000000048953,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_artifact",
+            "arguments": {
+              "detail": "summary"
+            },
+            "elapsed_ms": 1423.687323,
+            "client_before_send_ms": 0.34591999999975087,
+            "transport_roundtrip_ms": 1415.178664000001,
+            "client_after_receive_ms": 8.16273899999942,
+            "client_result_json_utf8_bytes": 7624,
+            "runner_encoding_ms": 0.053149999999732245,
+            "producer_evidence_id": "ev_023c4e1aa3ee14be77b9097ab94769e7b2b66f62eae37f826fb8835334afdd67",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 7.001858999999968,
+                "progress": 1,
+                "message": "inspect_artifact: started"
+              },
+              {
+                "elapsed_ms": 1293.2008189999997,
+                "progress": 2,
+                "message": "inspect_artifact.inventory: inventory substep completed"
+              },
+              {
+                "elapsed_ms": 1299.7916480000004,
+                "progress": 3,
+                "message": "inspect_artifact: completed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_26a8e15631bd04b0191b861f1db99b441a30c213f2090a6efb41a3168fca87e0"
+              },
+              "view": {
+                "kind": "inventory",
+                "collection": "occurrences",
+                "logical_paths": ["package.json", "main.js", "preload.js"],
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 51.96941700000025,
+            "client_before_send_ms": 0.2819500000005064,
+            "transport_roundtrip_ms": 37.05186800000047,
+            "client_after_receive_ms": 14.635598999999274,
+            "client_result_json_utf8_bytes": 8068,
+            "runner_encoding_ms": 0.05605000000105065,
+            "producer_evidence_id": "ev_de3e629669c89b539dc8527fc156a707bcb169b252fe702dc877850a29d80551",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "close_binary",
+            "arguments": {},
+            "elapsed_ms": 5.5077799999999115,
+            "client_before_send_ms": 0.24923999999919033,
+            "transport_roundtrip_ms": 4.5615600000000995,
+            "client_after_receive_ms": 0.6969800000006217,
+            "client_result_json_utf8_bytes": 92,
+            "runner_encoding_ms": 0.018000000000029104,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resources": {
+        "resource_scope": "rea-efficiency-267286598cfb40b28152cf553177c00e.scope",
+        "peak_cgroup_bytes_sampled": 744980480,
+        "elapsed_seconds": 11.398,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 16,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 11227716,
+          "user_usec": 10109779,
+          "system_usec": 1117936,
+          "nr_periods": 113,
+          "nr_throttled": 31,
+          "throttled_usec": 13027,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    {
+      "name": "obsidian-complete-pair2",
+      "report": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/baseline-runtime",
+        "artifact": "obsidian.asar",
+        "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "artifact_sha256_after": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+        "delivery": "complete",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "cdb8bb4a72deb445f7c82a0388f9d40ce7ffc53f5aa24f5523a8fbc387338629",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2309.2452319999998,
+        "catalog_ms": 742.526445,
+        "catalog_json_utf8_bytes": 2326609,
+        "catalog_input_definition_utf8_bytes": 494207,
+        "elapsed_ms": 10565.371219,
+        "calls": [
+          {
+            "name": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/obsidian-1.14.4.asar"
+            },
+            "elapsed_ms": 5542.7761820000005,
+            "client_before_send_ms": 5338.913602,
+            "transport_roundtrip_ms": 202.09464099999968,
+            "client_after_receive_ms": 1.7679390000012063,
+            "client_result_json_utf8_bytes": 538,
+            "runner_encoding_ms": 0.08671900000081223,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_artifact",
+            "arguments": {},
+            "elapsed_ms": 1431.0900540000002,
+            "client_before_send_ms": 0.3657600000005914,
+            "transport_roundtrip_ms": 1408.7938849999991,
+            "client_after_receive_ms": 21.93040900000051,
+            "client_result_json_utf8_bytes": 936774,
+            "runner_encoding_ms": 2.569999999999709,
+            "producer_evidence_id": "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 7.494899999999689,
+                "progress": 1,
+                "message": "inspect_artifact: started"
+              },
+              {
+                "elapsed_ms": 1308.1159100000004,
+                "progress": 2,
+                "message": "inspect_artifact.inventory: inventory substep completed"
+              },
+              {
+                "elapsed_ms": 1315.225840000001,
+                "progress": 3,
+                "message": "inspect_artifact: completed"
+              }
+            ]
+          },
+          {
+            "name": "close_binary",
+            "arguments": {},
+            "elapsed_ms": 7.54681999999957,
+            "client_before_send_ms": 0.34576000000015483,
+            "transport_roundtrip_ms": 6.477569999999105,
+            "client_after_receive_ms": 0.7234900000003108,
+            "client_result_json_utf8_bytes": 92,
+            "runner_encoding_ms": 0.021730000000388827,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resources": {
+        "resource_scope": "rea-efficiency-fb7426a23f444eb6831da81be0c484c6.scope",
+        "peak_cgroup_bytes_sampled": 742092800,
+        "elapsed_seconds": 11.751,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 18,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 11564613,
+          "user_usec": 10498755,
+          "system_usec": 1065857,
+          "nr_periods": 117,
+          "nr_throttled": 26,
+          "throttled_usec": 12138,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    }
+  ],
+  "interpretation": "Two alternating-order paired observations conserve all selected facts and inventory Evidence IDs. Tool-result compact JSON including the extra view call falls from 937404 to 16322 bytes. Catalog compact JSON grows by 43896 bytes. No statistical latency, upstream analysis, raw wire or token reduction is established. Original replies and runtime file tables remain in the operator lab."
+}

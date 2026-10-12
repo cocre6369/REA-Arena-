@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "issue": "https://github.com/morluto/rea/issues/2016",
+  "candidate_runtime": {
+    "revision": "0eb42a1eb8ab17aed04240174cb77612e733a1d8",
+    "integrated_main_revision": "c22111eca2c4bc84a084f12711f405b3e7422a40",
+    "runtime_files_sha256": "e99d3bdc851822b77e7d5bfaa9b60c57e7b99bd66e27a739bdea2e9300560d5f",
+    "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+    "scope": "Frozen compiled integration runtime after main sync; production files are fixed independently of subsequent research receipts."
+  },
+  "static_checks": {
+    "status": "passed",
+    "commands": [
+      "npm run build:cached",
+      "npm run docs:generate",
+      "npm run check",
+      "npm run docs:check"
+    ],
+    "resource": {
+      "resource_scope": "rea-efficiency-b89be4372cfa49a586ae9dbaaa7639bd.scope",
+      "peak_cgroup_bytes_sampled": 3220373504,
+      "elapsed_seconds": 299.768,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 72,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 3,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 233385811,
+        "user_usec": 208252353,
+        "system_usec": 25133458,
+        "nr_periods": 2997,
+        "nr_throttled": 59,
+        "throttled_usec": 26085,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    "qualification": "Three memory.high events were observed in this source-check scope; no hard memory max, OOM, OOM-kill, task-limit or early-stop event. This is build/check resource use, not an analyst-task optimization measurement."
+  },
+  "focused_checks": {
+    "status": "passed",
+    "files": 12,
+    "tests": 123,
+    "groups": [
+      {
+        "files": 10,
+        "tests": 112,
+        "scope": "domain views, API surface accumulator, application admission, WABT parser, public MCP schemas/views and cleanup",
+        "resource": {
+          "resource_scope": "rea-efficiency-3eb6f5e0837e4a8b92f2205025a1a6e3.scope",
+          "peak_cgroup_bytes_sampled": 1239265280,
+          "elapsed_seconds": 78.468,
+          "abort": null,
+          "hard_memory_bytes": 4294967296,
+          "early_stop_bytes": 3221225472,
+          "cpu_quota_percent": 100,
+          "cpu_affinity": [15],
+          "task_ceiling": 192,
+          "peak_tasks_sampled": 63,
+          "resource_events_last_observed": {
+            "memory.events": {
+              "low": 0,
+              "high": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_kill": 0,
+              "oom_group_kill": 0
+            },
+            "pids.events": {
+              "max": 0
+            }
+          },
+          "cpu_stat_last_observed": {
+            "usage_usec": 77766749,
+            "user_usec": 74217849,
+            "system_usec": 3548900,
+            "nr_periods": 784,
+            "nr_throttled": 187,
+            "throttled_usec": 33026,
+            "nr_bursts": 0,
+            "burst_usec": 0
+          }
+        }
+      },
+      {
+        "files": 2,
+        "tests": 11,
+        "scope": "Portable CLI view tests and isolated contract presentation, executed sequentially without changing test deadlines",
+        "resource": {
+          "resource_scope": "rea-efficiency-71263c404c8b4f958952060e685951e8.scope",
+          "peak_cgroup_bytes_sampled": 734838784,
+          "elapsed_seconds": 38.401,
+          "abort": null,
+          "hard_memory_bytes": 4294967296,
+          "early_stop_bytes": 3221225472,
+          "cpu_quota_percent": 100,
+          "cpu_affinity": [15],
+          "task_ceiling": 192,
+          "peak_tasks_sampled": 72,
+          "resource_events_last_observed": {
+            "memory.events": {
+              "low": 0,
+              "high": 0,
+              "max": 0,
+              "oom": 0,
+              "oom_kill": 0,
+              "oom_group_kill": 0
+            },
+            "pids.events": {
+              "max": 0
+            }
+          },
+          "cpu_stat_last_observed": {
+            "usage_usec": 38058372,
+            "user_usec": 32452846,
+            "system_usec": 5605525,
+            "nr_periods": 382,
+            "nr_throttled": 15,
+            "throttled_usec": 6020,
+            "nr_bursts": 0,
+            "burst_usec": 0
+          }
+        }
+      }
+    ]
+  },
+  "installed_wasm_package": {
+    "verifier_report": {
+      "status": "passed",
+      "cases": 42,
+      "tool_profile": "wabt@1.0.42",
+      "entrypoint": "/tmp/rea-wabt-package-verifier-mU7sq7/prefix/lib/node_modules/rea-agents/scripts/rea.mjs",
+      "verifier": {
+        "run_id": "8795dcb4-e63e-44f5-a76e-c14326ca7cc2",
+        "verifier_pid": 2022867,
+        "parent_pid": 2022674,
+        "process_lineage": {
+          "status": "verified",
+          "observed_at": "2026-10-12T09:01:39.910Z",
+          "launcher_pid": 2022867,
+          "launcher_parent_pid": 2022674,
+          "process_group_id": 2022607,
+          "descendants": []
+        }
+      }
+    },
+    "resource": {
+      "resource_scope": "rea-efficiency-a3a03778ba2c4f68b8a9bc3c277b23ff.scope",
+      "peak_cgroup_bytes_sampled": 1633435648,
+      "elapsed_seconds": 126.011,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 72,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 84980936,
+        "user_usec": 62350475,
+        "system_usec": 22630460,
+        "nr_periods": 1162,
+        "nr_throttled": 132,
+        "throttled_usec": 195623,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    "scope": "Actual npm pack, private-prefix install and 42 real WABT CLI/MCP cases using the installed entrypoint. No npm publication or host-global install."
+  },
+  "actual_old_evidence_migration": {
+    "runtime_revision": "0eb42a1eb8ab17aed04240174cb77612e733a1d8",
+    "original_bundle_sha256": "e1ff3d28801436bcc11693f79cc847a4f31234f49d88449f9e0d77215c3765fc",
+    "original_inspection_reply_sha256": "7cecd07012bb79f3afad2ea9e70357e056e9eab48c1aa13bbbd310cdcb43eb9f",
+    "source_files_unchanged": true,
+    "imported_wasm_source_evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140",
+    "original_wasm_record_preserved_exactly": true,
+    "typed_summary_and_first4_exports_match": true,
+    "portable_old_inspection_and_atomic_inventory_identity_preserved": true,
+    "original_inventory_evidence_id": "ev_22c17e52489f3ec0e7298a62da37bd985dbbec202d7208a0bb1c20d863790aed",
+    "calls": [
+      {
+        "name": "import_evidence_bundle",
+        "arguments": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/sqlite-wasm-control-final/retained-evidence.json"
+        },
+        "evidence_id": null
+      },
+      {
+        "name": "inspect_analysis_view",
+        "arguments": {
+          "source": {
+            "kind": "retained-evidence",
+            "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+          },
+          "view": {
+            "kind": "summary"
+          }
+        },
+        "evidence_id": "ev_8c039b1e4ecefb3619f50d2cc0b9b83086cc505fb0b8662fad7ba11b9cec8922"
+      },
+      {
+        "name": "inspect_analysis_view",
+        "arguments": {
+          "source": {
+            "kind": "retained-evidence",
+            "evidence_id": "ev_16b9f6e0fcefcab9603f14fd5e63ea00c4749accd94fef4a4e9fbb260d2e0140"
+          },
+          "view": {
+            "kind": "wasm",
+            "facet": "exports",
+            "offset": 0,
+            "limit": 4
+          }
+        },
+        "evidence_id": "ev_f78393e6d8e2e6930e9bbb58d29105b2bac3676ad84a3dc772a9518391cbafa1"
+      },
+      {
+        "name": "inspect_analysis_view",
+        "arguments": {
+          "source": {
+            "kind": "inline",
+            "original_evidence_id": "ev_08a04d3bd993ac132c2eea7a0a54ea5c7f65364a19c4daade0de49f1819885b9"
+          },
+          "view": {
+            "kind": "summary"
+          }
+        },
+        "evidence_id": "ev_014641bd80fbe3bd197c7a2ca514a4afd6ac87f8681629c207332e1ea056b267"
+      },
+      {
+        "name": "export_evidence_bundle",
+        "arguments": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/pr-old-evidence-migration-final/exported-after-import.json"
+        },
+        "evidence_id": null
+      }
+    ],
+    "scope": "Actual old complete Evidence imported or passed inline to the new runtime; original authentication, IDs, records, source bytes and selected facts preserved. WABT is unavailable and no producer analysis is requested. Existing file import/export is used, not an engine database cache."
+  },
+  "obsidian_public_sdk_comparisons": {
+    "default_complete": {
+      "artifact": "obsidian.asar",
+      "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+      "settings_match": true,
+      "setting_differences": [],
+      "facts_match": true,
+      "fact_differences": [],
+      "preserved_run_specific_values": [],
+      "workflow_failures": [null, null],
+      "left": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "elapsed_ms": 4746.384077,
+        "catalog_json_utf8_bytes": 2326609,
+        "calls": 3,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 937404,
+        "client_before_send_ms": 137.30152399999952,
+        "transport_roundtrip_ms": 1205.6266140000007,
+        "client_after_receive_ms": 10.524359999999433
+      },
+      "right": {
+        "revision": "0eb42a1eb8ab17aed04240174cb77612e733a1d8",
+        "runtime_files_sha256": "e99d3bdc851822b77e7d5bfaa9b60c57e7b99bd66e27a739bdea2e9300560d5f",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "elapsed_ms": 5173.826942,
+        "catalog_json_utf8_bytes": 2359082,
+        "calls": 3,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 937404,
+        "client_before_send_ms": 198.7767170000002,
+        "transport_roundtrip_ms": 1534.9082239999989,
+        "client_after_receive_ms": 20.125280000001112
+      },
+      "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+    },
+    "explicit_summary_and_paths": {
+      "artifact": "obsidian.asar",
+      "artifact_sha256": "146ef8470d8cbb4a6db209bdc19bf2bad13350444186c0fd93c31087b142b92f",
+      "settings_match": true,
+      "setting_differences": [],
+      "facts_match": true,
+      "fact_differences": [],
+      "preserved_run_specific_values": [],
+      "workflow_failures": [null, null],
+      "left": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "elapsed_ms": 4746.384077,
+        "catalog_json_utf8_bytes": 2326609,
+        "calls": 3,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 937404,
+        "client_before_send_ms": 137.30152399999952,
+        "transport_roundtrip_ms": 1205.6266140000007,
+        "client_after_receive_ms": 10.524359999999433
+      },
+      "right": {
+        "revision": "0eb42a1eb8ab17aed04240174cb77612e733a1d8",
+        "runtime_files_sha256": "e99d3bdc851822b77e7d5bfaa9b60c57e7b99bd66e27a739bdea2e9300560d5f",
+        "delivery": "summary",
+        "sdk_schema_mode": "selected",
+        "elapsed_ms": 5322.234577,
+        "catalog_json_utf8_bytes": 2359082,
+        "calls": 4,
+        "observed_tool_errors": 0,
+        "client_result_json_utf8_bytes": 16322,
+        "client_before_send_ms": 365.79113199999847,
+        "transport_roundtrip_ms": 1631.2227060000005,
+        "client_after_receive_ms": 28.0152420000004
+      },
+      "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+    },
+    "scope": "Same actual runner/providers/SDK settings and unchanged target bytes. Complete source inventory identities, manifest, path rows, coverage and limitations match the original frozen baseline. One new comparison cohort, not a latency distribution."
+  },
+  "real_compatibility_resource": {
+    "resource_scope": "rea-efficiency-a5cb3554822842ed9f44c6c18471a44a.scope",
+    "peak_cgroup_bytes_sampled": 686710784,
+    "elapsed_seconds": 24.799,
+    "abort": null,
+    "hard_memory_bytes": 4294967296,
+    "early_stop_bytes": 3221225472,
+    "cpu_quota_percent": 100,
+    "cpu_affinity": [15],
+    "task_ceiling": 192,
+    "peak_tasks_sampled": 28,
+    "resource_events_last_observed": {
+      "memory.events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pids.events": {
+        "max": 0
+      }
+    },
+    "cpu_stat_last_observed": {
+      "usage_usec": 23918866,
+      "user_usec": 20208591,
+      "system_usec": 3710275,
+      "nr_periods": 247,
+      "nr_throttled": 6,
+      "throttled_usec": 2456,
+      "nr_bursts": 0,
+      "burst_usec": 0
+    }
+  },
+  "scope": "Post-main-integration verification, separately pinned from the earlier real-model measurements. All binary targets, installed package output, complete exported Evidence, raw replies and logs remain outside Git. No universal platform/history/client compatibility or full check:pr success is claimed."
+}

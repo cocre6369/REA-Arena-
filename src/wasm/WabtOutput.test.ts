@@ -166,7 +166,7 @@ it("bounds section header bytes while accepting a five-byte size LEB", () => {
       "Sections:",
       "",
       "     Type start=0x0000000a end=0x0000000b (size=0x00000001) count: 0",
-      `   Custom start=0x${start.toString(16).padStart(8, "0")} end=0x${(start + 1).toString(16).padStart(8, "0")} (size=0x00000001) "\"`,
+      `   Custom start=0x${start.toString(16).padStart(8, "0")} end=0x${(start + 1).toString(16).padStart(8, "0")} (size=0x00000001) ""`,
       "",
       "Section Details:",
       "",

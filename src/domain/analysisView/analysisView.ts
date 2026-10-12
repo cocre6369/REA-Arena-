@@ -15,6 +15,14 @@ import type { AnalysisError } from "../analysisErrorBase.js";
 import { binaryLayoutSchema } from "../native/binaryLayout.js";
 import { functionDossierSchema } from "../hopperValues.js";
 import {
+  artifactGraphManifestSchema,
+  artifactNodeSchema,
+  artifactOccurrenceSchema,
+  artifactEdgeSchema,
+  integrityContradictionSchema,
+} from "../artifactGraph.js";
+import { artifactInspectionResultSchema } from "../artifactInspection.js";
+import {
   parseOwnedJavaScriptApplicationAnalysisSteps,
   type JavaScriptApplicationAnalysisResult,
 } from "../javascript/javascriptApplicationAnalysis.js";
@@ -27,6 +35,13 @@ import {
   apiSurfaceViewSchema,
 } from "./webNetworkApiSurfaceView.js";
 import { projectNativeFunctionView } from "./nativeFunctionView.js";
+import { projectArtifactInventoryView } from "./artifactInventoryView.js";
+import {
+  projectWasmArtifactView,
+  wasmViewRequestSchema,
+  wasmViewItemSchema,
+  wasmSummarySchema,
+} from "./wasmArtifactView.js";
 import type { WebNetworkApiSurfaceAccumulator } from "./WebNetworkApiSurfaceAccumulator.js";
 
 /** Public name of the selected-view workflow. */
@@ -108,6 +123,28 @@ const nativeViewSchema = z.strictObject({
   limit: z.number().int().positive().default(64),
 });
 
+/** Original inventory records in stable order, optionally matching exact paths. */
+const inventoryViewSchema = z.discriminatedUnion("collection", [
+  z.strictObject({
+    kind: z.literal("inventory"),
+    collection: z.literal("occurrences"),
+    logical_paths: z
+      .array(z.string())
+      .optional()
+      .describe(
+        "Exact recorded logical paths. Omitted selects all available occurrences; an empty array selects none. This does not resolve filesystem paths.",
+      ),
+    offset: z.number().int().nonnegative().default(0),
+    limit: z.number().int().positive().default(64),
+  }),
+  z.strictObject({
+    kind: z.literal("inventory"),
+    collection: z.enum(["nodes", "edges", "integrity_contradictions"]),
+    offset: z.number().int().nonnegative().default(0),
+    limit: z.number().int().positive().default(64),
+  }),
+]);
+
 /** Caller-selected projection of already completed analysis Evidence. */
 export const analysisViewRequestSchema = z.discriminatedUnion("kind", [
   summaryViewSchema,
@@ -115,6 +152,8 @@ export const analysisViewRequestSchema = z.discriminatedUnion("kind", [
   itemViewSchema,
   pageViewSchema,
   nativeViewSchema,
+  inventoryViewSchema,
+  wasmViewRequestSchema,
   apiSurfaceViewSchema,
 ]);
 
@@ -192,30 +231,30 @@ const javascriptSummarySchema = z.strictObject({
   limitation_count: z.number().int().nonnegative(),
 });
 
-const summaryViewResultFields = {
-  kind: z.literal("summary"),
-  view: summaryViewSchema,
-  parent_evidence_id: prefixedDigestSchema("ev"),
-  parent_digest: digestSchema,
-  view_digest: digestSchema,
-  artifact: artifactSchema,
-  coverage: coverageSchema,
-  limitations: z.array(z.string()),
-  unknowns: z.array(z.string()),
-} as const;
-
-/** Summary `inspect_binary_layout` detail returns; no other view kind. */
-export const binaryLayoutSummaryViewResultSchema = z.strictObject({
-  ...summaryViewResultFields,
-  summary: layoutSummarySchema,
-  parent_operation: z.literal("inspect_binary_layout"),
-});
-
-/** Summary `analyze_javascript_application` detail returns; no other view kind. */
-export const javascriptApplicationSummaryViewResultSchema = z.strictObject({
-  ...summaryViewResultFields,
-  summary: javascriptSummarySchema,
-  parent_operation: z.literal("analyze_javascript_application"),
+const inventorySummarySchema = z.strictObject({
+  manifest: artifactGraphManifestSchema,
+  available_counts: z.strictObject({
+    nodes: z.number().int().nonnegative(),
+    occurrences: z.number().int().nonnegative(),
+    edges: z.number().int().nonnegative(),
+    integrity_contradictions: z.number().int().nonnegative(),
+  }),
+  observed_entry_kind_counts: z.strictObject({
+    file: z.number().int().nonnegative(),
+    directory: z.number().int().nonnegative(),
+    symlink: z.number().int().nonnegative(),
+    slice: z.number().int().nonnegative(),
+  }),
+  source_complete: z.boolean(),
+  inventory_evidence_ids: z.array(prefixedDigestSchema("ev")).min(1),
+  inspection: z
+    .strictObject({
+      coverage: artifactInspectionResultSchema.shape.coverage,
+      unexplored_branches:
+        artifactInspectionResultSchema.shape.unexplored_branches,
+    })
+    .nullable(),
+  limitation_count: z.number().int().nonnegative(),
 });
 
 const viewResultBase = {
@@ -224,6 +263,9 @@ const viewResultBase = {
     "inspect_binary_layout",
     "analyze_javascript_application",
     "analyze_function",
+    "inspect_artifact",
+    "inventory_artifact",
+    "inspect_wasm_artifact",
   ]),
   parent_digest: digestSchema,
   view_digest: digestSchema,
@@ -232,6 +274,33 @@ const viewResultBase = {
   limitations: z.array(z.string()),
   unknowns: z.array(z.string()),
 } as const;
+
+const summaryViewResultBase = {
+  kind: z.literal("summary"),
+  view: summaryViewSchema,
+  ...viewResultBase,
+} as const;
+
+/** Summary `inspect_binary_layout` detail returns; no other view kind. */
+export const binaryLayoutSummaryViewResultSchema = z.strictObject({
+  ...summaryViewResultBase,
+  summary: layoutSummarySchema,
+  parent_operation: z.literal("inspect_binary_layout"),
+});
+
+/** Summary `analyze_javascript_application` detail returns; no other view kind. */
+export const javascriptApplicationSummaryViewResultSchema = z.strictObject({
+  ...summaryViewResultBase,
+  summary: javascriptSummarySchema,
+  parent_operation: z.literal("analyze_javascript_application"),
+});
+
+/** Exact summary carrier for artifact inspection's optional delivery contract. */
+export const artifactInventorySummaryViewResultSchema = z.strictObject({
+  ...summaryViewResultBase,
+  parent_operation: z.enum(["inspect_artifact", "inventory_artifact"]),
+  summary: inventorySummarySchema,
+});
 
 /** Projected facts for one selected view of retained analysis Evidence. */
 export const analysisViewResultSchema = z.discriminatedUnion("kind", [
@@ -247,10 +316,13 @@ export const analysisViewResultSchema = z.discriminatedUnion("kind", [
     }),
   }),
   z.strictObject({
-    kind: z.literal("summary"),
-    view: summaryViewSchema,
-    summary: z.union([layoutSummarySchema, javascriptSummarySchema]),
-    ...viewResultBase,
+    ...summaryViewResultBase,
+    summary: z.union([
+      layoutSummarySchema,
+      javascriptSummarySchema,
+      inventorySummarySchema,
+      wasmSummarySchema,
+    ]),
   }),
   z.strictObject({
     kind: z.literal("facet"),
@@ -275,6 +347,28 @@ export const analysisViewResultSchema = z.discriminatedUnion("kind", [
     view: nativeViewSchema,
     procedure_address: z.string().nullable(),
     item: jsonValueSchema,
+    ...viewResultBase,
+  }),
+  z.strictObject({
+    kind: z.literal("wasm"),
+    view: wasmViewRequestSchema,
+    item: wasmViewItemSchema,
+    ...viewResultBase,
+  }),
+  z.strictObject({
+    kind: z.literal("inventory"),
+    view: inventoryViewSchema,
+    manifest: artifactGraphManifestSchema,
+    inventory_evidence_ids: z.array(prefixedDigestSchema("ev")).min(1),
+    source_complete: z.boolean(),
+    items: z.array(
+      z.union([
+        artifactNodeSchema,
+        artifactOccurrenceSchema,
+        artifactEdgeSchema,
+        integrityContradictionSchema,
+      ]),
+    ),
     ...viewResultBase,
   }),
 ]);
@@ -319,7 +413,12 @@ export type UnsignedAnalysisView =
   | Omit<
       Extract<AnalysisViewResult, { readonly kind: "native" }>,
       "view_digest"
-    >;
+    >
+  | Omit<
+      Extract<AnalysisViewResult, { readonly kind: "inventory" }>,
+      "view_digest"
+    >
+  | Omit<Extract<AnalysisViewResult, { readonly kind: "wasm" }>, "view_digest">;
 
 /** Attach the content digest that must change when projected bytes change. */
 export const sealAnalysisView = (
@@ -364,7 +463,7 @@ const unsupportedParent = (
   new AnalysisUnsupportedTargetError(
     INSPECT_ANALYSIS_VIEW_OPERATION,
     parentArtifactPath(parent),
-    `Parent Evidence operation ${JSON.stringify(parent.operation)} is not inspect_binary_layout, analyze_javascript_application or analyze_function.`,
+    `Parent Evidence operation ${JSON.stringify(parent.operation)} does not support analysis views. Use completed binary layout, JavaScript application, native function, artifact inventory/inspection, WASM, or web network capture Evidence.`,
   );
 
 const parentArtifactPath = (parent: AnalysisViewParent): string => {
@@ -457,6 +556,17 @@ export const projectAnalysisView = (
         ),
       );
     const projected = projectNativeFunctionView(parent, native.data, view);
+    return projected.ok ? ok(sealAnalysisView(projected.value)) : projected;
+  }
+  if (parent.operation === "inspect_wasm_artifact") {
+    const projected = projectWasmArtifactView(parent, view);
+    return projected.ok ? ok(sealAnalysisView(projected.value)) : projected;
+  }
+  if (
+    parent.operation === "inspect_artifact" ||
+    parent.operation === "inventory_artifact"
+  ) {
+    const projected = projectArtifactInventoryView(parent, view);
     return projected.ok ? ok(sealAnalysisView(projected.value)) : projected;
   }
   return err(unsupportedParent(parent));

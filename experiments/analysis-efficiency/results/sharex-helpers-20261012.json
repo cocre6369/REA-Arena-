@@ -1,0 +1,941 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "artifact_provenance": {
+    "file": "ShareX.HelpersLib.dll",
+    "bytes": 1076224,
+    "sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+    "transport_sha256": "967b5d838df5ce25fb5fd7cbd16f1bd797427e2df16907b022b74a4bc0fb9d54",
+    "zip_member": "ShareX.HelpersLib.dll",
+    "transport_url": "https://github.com/ShareX/ShareX/releases/download/v19.0.2/ShareX-19.0.2-portable.zip",
+    "scope": "Selected regular shipped managed library; no assembly execution"
+  },
+  "comparison": {
+    "artifact": "sharex.helpers.dll",
+    "artifact_sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+    "settings_match": true,
+    "setting_differences": [],
+    "facts_match": true,
+    "fact_differences": [],
+    "preserved_run_specific_values": [],
+    "workflow_failures": [null, null],
+    "left": {
+      "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+      "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+      "delivery": "complete",
+      "sdk_schema_mode": "selected",
+      "elapsed_ms": 4381.027677,
+      "catalog_json_utf8_bytes": 2326609,
+      "calls": 2,
+      "observed_tool_errors": 0,
+      "client_result_json_utf8_bytes": 1586816,
+      "client_before_send_ms": 249.28343799999948,
+      "transport_roundtrip_ms": 497.1850450000002,
+      "client_after_receive_ms": 46.240662999999586
+    },
+    "right": {
+      "revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+      "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+      "delivery": "complete",
+      "sdk_schema_mode": "selected",
+      "elapsed_ms": 4142.189118,
+      "catalog_json_utf8_bytes": 2387588,
+      "calls": 2,
+      "observed_tool_errors": 0,
+      "client_result_json_utf8_bytes": 1586816,
+      "client_before_send_ms": 250.82225900000049,
+      "transport_roundtrip_ms": 460.1880620000002,
+      "client_after_receive_ms": 39.01462099999935
+    },
+    "scope": "Same selected analyst facts; includes extra view calls and preserves observed tool errors. Result JSON bytes exclude file exports, catalog responses and raw wire framing. This is one paired observation, not a statistical speedup or independent ground-truth proof."
+  },
+  "runs": {
+    "control": {
+      "summary": {
+        "revision": "42b0ed126df7d5b908ac369715378d5e519051b7",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/baseline-runtime",
+        "artifact": "sharex.helpers.dll",
+        "artifact_sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+        "artifact_sha256_after": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "native_question": null,
+        "javascript_question": null,
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "d37939bcdf8ef77e9df37c9978bb848fda4cd633d55f6e9ec7df8de5e0d472f6",
+        "runtime_files_sha256": "3a1765a6fec0031db0b288112d4db9bc0dd503c9c3aa0946f07ce57f7673ab4b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2536.9963740000003,
+        "catalog_ms": 842.8690400000005,
+        "catalog_json_utf8_bytes": 2326609,
+        "catalog_input_definition_utf8_bytes": 494207,
+        "elapsed_ms": 4381.027677,
+        "calls": [
+          {
+            "name": "inspect_managed_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll"
+            },
+            "elapsed_ms": 552.1295299999992,
+            "client_before_send_ms": 169.2211159999997,
+            "transport_roundtrip_ms": 350.60390499999994,
+            "client_after_receive_ms": 32.3045089999996,
+            "client_result_json_utf8_bytes": 1296762,
+            "runner_encoding_ms": 3.9290110000001732,
+            "producer_evidence_id": "ev_638a128f6191085bb9af1ecd50016cd4c050b7b8fc419645f132e9c449d9304c",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 192.02980200000002,
+                "progress": 1,
+                "message": "inspect_managed_artifact: started"
+              },
+              {
+                "elapsed_ms": 337.4740219999994,
+                "progress": 2,
+                "message": "inspect_managed_artifact: completed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_managed_native_boundaries",
+            "arguments": {
+              "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll"
+            },
+            "elapsed_ms": 240.579616,
+            "client_before_send_ms": 80.06232199999977,
+            "transport_roundtrip_ms": 146.58114000000023,
+            "client_after_receive_ms": 13.936153999999988,
+            "client_result_json_utf8_bytes": 290054,
+            "runner_encoding_ms": 1.4098000000003594,
+            "producer_evidence_id": "ev_50b24466f06b663d5302fa84d8e64656a48396a943cd11c433c21046a78fd960",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 109.3164999999999,
+                "progress": 1,
+                "message": "inspect_managed_native_boundaries: started"
+              },
+              {
+                "elapsed_ms": 186.9882120000002,
+                "progress": 2,
+                "message": "inspect_managed_native_boundaries: completed"
+              }
+            ]
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resource": {
+        "resource_scope": "rea-efficiency-1120db0cfe91477bab7cd57cfc877133.scope",
+        "peak_cgroup_bytes_sampled": 500715520,
+        "elapsed_seconds": 6.568,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 16,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 5782680,
+          "user_usec": 4740360,
+          "system_usec": 1042319,
+          "nr_periods": 65,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "assembly": {
+        "name": "ShareX.HelpersLib",
+        "version": "19.0.2.0",
+        "culture": null,
+        "flags": 0,
+        "hash_algorithm": 32772,
+        "public_key": {
+          "kind": "none",
+          "byte_length": 0,
+          "sha256": null,
+          "token": null
+        },
+        "token": "0x20000001",
+        "row_offset": 489280
+      },
+      "module": {
+        "name": "ShareX.HelpersLib.dll",
+        "generation": 0,
+        "mvid": "1bb06158-5c4b-4a7e-a13f-1d6a036d3bd3",
+        "enc_id": null,
+        "enc_base_id": null,
+        "token": "0x00000001",
+        "row_offset": 283476
+      },
+      "classification": {
+        "status": "managed",
+        "container": "pe",
+        "runtime_family": "modern-dotnet",
+        "implementation": "cil",
+        "managed_architecture": "x86_64",
+        "evidence": [
+          {
+            "code": "cli-header-observed",
+            "detail": "A file-backed PE CLI header and metadata root were admitted.",
+            "file_offset": 512
+          },
+          {
+            "code": "target-framework-observed",
+            "detail": "An assembly-level TargetFrameworkAttribute names modern .NET.",
+            "file_offset": 450350
+          },
+          {
+            "code": "managed-architecture-derived",
+            "detail": "Managed architecture x86_64 is derived from PE machine and CLI flags.",
+            "file_offset": 528
+          }
+        ]
+      },
+      "target_frameworks": [".NETCoreApp,Version=v9.0"],
+      "boundaries": {
+        "artifact": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll",
+          "sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+          "byte_length": 1076224,
+          "format": "pe"
+        },
+        "module": {
+          "name": "ShareX.HelpersLib.dll",
+          "generation": 0,
+          "mvid": "1bb06158-5c4b-4a7e-a13f-1d6a036d3bd3",
+          "enc_id": null,
+          "enc_base_id": null,
+          "token": "0x00000001",
+          "row_offset": 283476
+        },
+        "metadata": {
+          "status": "complete",
+          "version": "v4.0.30319",
+          "table_row_counts": {
+            "Module": 1,
+            "TypeRef": 657,
+            "TypeDef": 501,
+            "Field": 2899,
+            "MethodDef": 4120,
+            "Param": 4188,
+            "InterfaceImpl": 98,
+            "MemberRef": 2403,
+            "Constant": 1507,
+            "CustomAttribute": 1988,
+            "FieldMarshal": 64,
+            "DeclSecurity": 1,
+            "ClassLayout": 9,
+            "FieldLayout": 37,
+            "StandAloneSig": 635,
+            "EventMap": 28,
+            "Event": 40,
+            "PropertyMap": 144,
+            "Property": 1015,
+            "MethodSemantics": 1539,
+            "MethodImpl": 133,
+            "ModuleRef": 11,
+            "TypeSpec": 227,
+            "ImplMap": 147,
+            "FieldRVA": 12,
+            "Assembly": 1,
+            "AssemblyRef": 49,
+            "ManifestResource": 17,
+            "NestedClass": 169,
+            "GenericParam": 95,
+            "MethodSpec": 237,
+            "GenericParamConstraint": 24
+          }
+        },
+        "identity_scope": {
+          "token_identity": "build-local",
+          "requires_artifact_sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+          "requires_mvid": "1bb06158-5c4b-4a7e-a13f-1d6a036d3bd3"
+        },
+        "cli_native": {
+          "il_only": true,
+          "requires_32bit": false,
+          "strong_name_signed": false,
+          "native_entry_point": false,
+          "ready_to_run_signature": false,
+          "managed_native_header_rva": 0,
+          "managed_native_header_size": 0
+        },
+        "module_refs": [
+          {
+            "token": "0x1a000001",
+            "row_offset": 487240,
+            "name": "user32.dll"
+          },
+          {
+            "token": "0x1a000002",
+            "row_offset": 487244,
+            "name": "kernel32.dll"
+          },
+          {
+            "token": "0x1a000003",
+            "row_offset": 487248,
+            "name": "gdi32.dll"
+          },
+          {
+            "token": "0x1a000004",
+            "row_offset": 487252,
+            "name": "gdiplus.dll"
+          },
+          {
+            "token": "0x1a000005",
+            "row_offset": 487256,
+            "name": "shell32.dll"
+          },
+          {
+            "token": "0x1a000006",
+            "row_offset": 487260,
+            "name": "dwmapi.dll"
+          },
+          {
+            "token": "0x1a000007",
+            "row_offset": 487264,
+            "name": "winmm.dll"
+          },
+          {
+            "token": "0x1a000008",
+            "row_offset": 487268,
+            "name": "msvcrt.dll"
+          },
+          {
+            "token": "0x1a000009",
+            "row_offset": 487272,
+            "name": "ntdll.dll"
+          },
+          {
+            "token": "0x1a00000a",
+            "row_offset": 487276,
+            "name": "avifil32.dll"
+          },
+          {
+            "token": "0x1a00000b",
+            "row_offset": 487280,
+            "name": "uxtheme.dll"
+          }
+        ],
+        "summary": {
+          "module_ref_count": 11,
+          "pinvoke_import_count": 147,
+          "native_implementation_count": 225,
+          "ready_to_run": false,
+          "mixed_mode_or_native_header": false
+        },
+        "coverage": {
+          "state": "complete",
+          "issues": []
+        },
+        "limitations": [
+          "P/Invoke rows prove managed import declarations only; this inspection does not verify that a native library, export, thunk, or provider-qualified function exists.",
+          "Managed metadata tokens are build-local coordinates and are only meaningful with the reported artifact SHA-256 and MVID.",
+          "ReadyToRun, NativeAOT, C++/CLI, and IL2CPP native semantics require separately selected native-provider evidence; this tool does not translate managed tokens into native addresses."
+        ],
+        "pinvoke_first3": [
+          {
+            "token": "0x1c000001",
+            "row_offset": 487738,
+            "mapping_flags": 256,
+            "mapping_flags_hex": "0x0100",
+            "member_token": "0x060008b0",
+            "member_kind": "method",
+            "member_name": "AnimateWindow",
+            "import_name": "AnimateWindow",
+            "import_scope_token": "0x1a000001",
+            "import_scope_name": "user32.dll",
+            "no_mangle": false,
+            "char_set": "not-specified",
+            "call_convention": "winapi",
+            "supports_last_error": false,
+            "best_fit": "assembly-default",
+            "throw_on_unmappable_char": "assembly-default",
+            "verification": "managed-declaration-only"
+          },
+          {
+            "token": "0x1c000002",
+            "row_offset": 487748,
+            "mapping_flags": 256,
+            "mapping_flags_hex": "0x0100",
+            "member_token": "0x060008b1",
+            "member_kind": "method",
+            "member_name": "BringWindowToTop",
+            "import_name": "BringWindowToTop",
+            "import_scope_token": "0x1a000001",
+            "import_scope_name": "user32.dll",
+            "no_mangle": false,
+            "char_set": "not-specified",
+            "call_convention": "winapi",
+            "supports_last_error": false,
+            "best_fit": "assembly-default",
+            "throw_on_unmappable_char": "assembly-default",
+            "verification": "managed-declaration-only"
+          },
+          {
+            "token": "0x1c000003",
+            "row_offset": 487758,
+            "mapping_flags": 256,
+            "mapping_flags_hex": "0x0100",
+            "member_token": "0x060008b2",
+            "member_kind": "method",
+            "member_name": "CopyIcon",
+            "import_name": "CopyIcon",
+            "import_scope_token": "0x1a000001",
+            "import_scope_name": "user32.dll",
+            "no_mangle": false,
+            "char_set": "not-specified",
+            "call_convention": "winapi",
+            "supports_last_error": false,
+            "best_fit": "assembly-default",
+            "throw_on_unmappable_char": "assembly-default",
+            "verification": "managed-declaration-only"
+          }
+        ]
+      },
+      "evidence_ids": [
+        "ev_638a128f6191085bb9af1ecd50016cd4c050b7b8fc419645f132e9c449d9304c",
+        "ev_50b24466f06b663d5302fa84d8e64656a48396a943cd11c433c21046a78fd960"
+      ],
+      "complete_boundaries_payload": {
+        "sha256": "07565a2ca4a3767ea3edd732459e6304a217e476ec4a92b37dcc1e874a101f3d",
+        "digest_encoding": "UTF-8 compact JSON with sorted object keys, ensure_ascii=false",
+        "pinvoke_imports": 147,
+        "native_implementations": 225,
+        "retention": "Original public MCP responses and complete comparison inputs remain outside Git in the named lab runs."
+      }
+    },
+    "candidate": {
+      "summary": {
+        "revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/phase3-guidance-runtime",
+        "artifact": "sharex.helpers.dll",
+        "artifact_sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+        "artifact_sha256_after": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "native_question": null,
+        "javascript_question": null,
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "d37939bcdf8ef77e9df37c9978bb848fda4cd633d55f6e9ec7df8de5e0d472f6",
+        "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2292.88464,
+        "catalog_ms": 885.2301379999999,
+        "catalog_json_utf8_bytes": 2387588,
+        "catalog_input_definition_utf8_bytes": 497897,
+        "elapsed_ms": 4142.189118,
+        "calls": [
+          {
+            "name": "inspect_managed_artifact",
+            "arguments": {
+              "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll"
+            },
+            "elapsed_ms": 529.6111530000007,
+            "client_before_send_ms": 175.19773800000075,
+            "transport_roundtrip_ms": 326.37074699999994,
+            "client_after_receive_ms": 28.04266800000005,
+            "client_result_json_utf8_bytes": 1296762,
+            "runner_encoding_ms": 3.2546910000000935,
+            "producer_evidence_id": "ev_638a128f6191085bb9af1ecd50016cd4c050b7b8fc419645f132e9c449d9304c",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 198.63848400000006,
+                "progress": 1,
+                "message": "inspect_managed_artifact: started"
+              },
+              {
+                "elapsed_ms": 328.2134190000006,
+                "progress": 2,
+                "message": "inspect_managed_artifact: completed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_managed_native_boundaries",
+            "arguments": {
+              "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll"
+            },
+            "elapsed_ms": 220.41378899999927,
+            "client_before_send_ms": 75.62452099999973,
+            "transport_roundtrip_ms": 133.81731500000024,
+            "client_after_receive_ms": 10.971952999999303,
+            "client_result_json_utf8_bytes": 290054,
+            "runner_encoding_ms": 1.4132500000005166,
+            "producer_evidence_id": "ev_50b24466f06b663d5302fa84d8e64656a48396a943cd11c433c21046a78fd960",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 103.13244799999939,
+                "progress": 1,
+                "message": "inspect_managed_native_boundaries: started"
+              },
+              {
+                "elapsed_ms": 176.69792699999925,
+                "progress": 2,
+                "message": "inspect_managed_native_boundaries: completed"
+              }
+            ]
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resource": {
+        "resource_scope": "rea-efficiency-681318ccab5c42d3a7b76e42ddfded69.scope",
+        "peak_cgroup_bytes_sampled": 492965888,
+        "elapsed_seconds": 6.264,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 16,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 5539719,
+          "user_usec": 4513335,
+          "system_usec": 1026384,
+          "nr_periods": 62,
+          "nr_throttled": 0,
+          "throttled_usec": 0,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "assembly": {
+        "name": "ShareX.HelpersLib",
+        "version": "19.0.2.0",
+        "culture": null,
+        "flags": 0,
+        "hash_algorithm": 32772,
+        "public_key": {
+          "kind": "none",
+          "byte_length": 0,
+          "sha256": null,
+          "token": null
+        },
+        "token": "0x20000001",
+        "row_offset": 489280
+      },
+      "module": {
+        "name": "ShareX.HelpersLib.dll",
+        "generation": 0,
+        "mvid": "1bb06158-5c4b-4a7e-a13f-1d6a036d3bd3",
+        "enc_id": null,
+        "enc_base_id": null,
+        "token": "0x00000001",
+        "row_offset": 283476
+      },
+      "classification": {
+        "status": "managed",
+        "container": "pe",
+        "runtime_family": "modern-dotnet",
+        "implementation": "cil",
+        "managed_architecture": "x86_64",
+        "evidence": [
+          {
+            "code": "cli-header-observed",
+            "detail": "A file-backed PE CLI header and metadata root were admitted.",
+            "file_offset": 512
+          },
+          {
+            "code": "target-framework-observed",
+            "detail": "An assembly-level TargetFrameworkAttribute names modern .NET.",
+            "file_offset": 450350
+          },
+          {
+            "code": "managed-architecture-derived",
+            "detail": "Managed architecture x86_64 is derived from PE machine and CLI flags.",
+            "file_offset": 528
+          }
+        ]
+      },
+      "target_frameworks": [".NETCoreApp,Version=v9.0"],
+      "boundaries": {
+        "artifact": {
+          "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll",
+          "sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+          "byte_length": 1076224,
+          "format": "pe"
+        },
+        "module": {
+          "name": "ShareX.HelpersLib.dll",
+          "generation": 0,
+          "mvid": "1bb06158-5c4b-4a7e-a13f-1d6a036d3bd3",
+          "enc_id": null,
+          "enc_base_id": null,
+          "token": "0x00000001",
+          "row_offset": 283476
+        },
+        "metadata": {
+          "status": "complete",
+          "version": "v4.0.30319",
+          "table_row_counts": {
+            "Module": 1,
+            "TypeRef": 657,
+            "TypeDef": 501,
+            "Field": 2899,
+            "MethodDef": 4120,
+            "Param": 4188,
+            "InterfaceImpl": 98,
+            "MemberRef": 2403,
+            "Constant": 1507,
+            "CustomAttribute": 1988,
+            "FieldMarshal": 64,
+            "DeclSecurity": 1,
+            "ClassLayout": 9,
+            "FieldLayout": 37,
+            "StandAloneSig": 635,
+            "EventMap": 28,
+            "Event": 40,
+            "PropertyMap": 144,
+            "Property": 1015,
+            "MethodSemantics": 1539,
+            "MethodImpl": 133,
+            "ModuleRef": 11,
+            "TypeSpec": 227,
+            "ImplMap": 147,
+            "FieldRVA": 12,
+            "Assembly": 1,
+            "AssemblyRef": 49,
+            "ManifestResource": 17,
+            "NestedClass": 169,
+            "GenericParam": 95,
+            "MethodSpec": 237,
+            "GenericParamConstraint": 24
+          }
+        },
+        "identity_scope": {
+          "token_identity": "build-local",
+          "requires_artifact_sha256": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+          "requires_mvid": "1bb06158-5c4b-4a7e-a13f-1d6a036d3bd3"
+        },
+        "cli_native": {
+          "il_only": true,
+          "requires_32bit": false,
+          "strong_name_signed": false,
+          "native_entry_point": false,
+          "ready_to_run_signature": false,
+          "managed_native_header_rva": 0,
+          "managed_native_header_size": 0
+        },
+        "module_refs": [
+          {
+            "token": "0x1a000001",
+            "row_offset": 487240,
+            "name": "user32.dll"
+          },
+          {
+            "token": "0x1a000002",
+            "row_offset": 487244,
+            "name": "kernel32.dll"
+          },
+          {
+            "token": "0x1a000003",
+            "row_offset": 487248,
+            "name": "gdi32.dll"
+          },
+          {
+            "token": "0x1a000004",
+            "row_offset": 487252,
+            "name": "gdiplus.dll"
+          },
+          {
+            "token": "0x1a000005",
+            "row_offset": 487256,
+            "name": "shell32.dll"
+          },
+          {
+            "token": "0x1a000006",
+            "row_offset": 487260,
+            "name": "dwmapi.dll"
+          },
+          {
+            "token": "0x1a000007",
+            "row_offset": 487264,
+            "name": "winmm.dll"
+          },
+          {
+            "token": "0x1a000008",
+            "row_offset": 487268,
+            "name": "msvcrt.dll"
+          },
+          {
+            "token": "0x1a000009",
+            "row_offset": 487272,
+            "name": "ntdll.dll"
+          },
+          {
+            "token": "0x1a00000a",
+            "row_offset": 487276,
+            "name": "avifil32.dll"
+          },
+          {
+            "token": "0x1a00000b",
+            "row_offset": 487280,
+            "name": "uxtheme.dll"
+          }
+        ],
+        "summary": {
+          "module_ref_count": 11,
+          "pinvoke_import_count": 147,
+          "native_implementation_count": 225,
+          "ready_to_run": false,
+          "mixed_mode_or_native_header": false
+        },
+        "coverage": {
+          "state": "complete",
+          "issues": []
+        },
+        "limitations": [
+          "P/Invoke rows prove managed import declarations only; this inspection does not verify that a native library, export, thunk, or provider-qualified function exists.",
+          "Managed metadata tokens are build-local coordinates and are only meaningful with the reported artifact SHA-256 and MVID.",
+          "ReadyToRun, NativeAOT, C++/CLI, and IL2CPP native semantics require separately selected native-provider evidence; this tool does not translate managed tokens into native addresses."
+        ],
+        "pinvoke_first3": [
+          {
+            "token": "0x1c000001",
+            "row_offset": 487738,
+            "mapping_flags": 256,
+            "mapping_flags_hex": "0x0100",
+            "member_token": "0x060008b0",
+            "member_kind": "method",
+            "member_name": "AnimateWindow",
+            "import_name": "AnimateWindow",
+            "import_scope_token": "0x1a000001",
+            "import_scope_name": "user32.dll",
+            "no_mangle": false,
+            "char_set": "not-specified",
+            "call_convention": "winapi",
+            "supports_last_error": false,
+            "best_fit": "assembly-default",
+            "throw_on_unmappable_char": "assembly-default",
+            "verification": "managed-declaration-only"
+          },
+          {
+            "token": "0x1c000002",
+            "row_offset": 487748,
+            "mapping_flags": 256,
+            "mapping_flags_hex": "0x0100",
+            "member_token": "0x060008b1",
+            "member_kind": "method",
+            "member_name": "BringWindowToTop",
+            "import_name": "BringWindowToTop",
+            "import_scope_token": "0x1a000001",
+            "import_scope_name": "user32.dll",
+            "no_mangle": false,
+            "char_set": "not-specified",
+            "call_convention": "winapi",
+            "supports_last_error": false,
+            "best_fit": "assembly-default",
+            "throw_on_unmappable_char": "assembly-default",
+            "verification": "managed-declaration-only"
+          },
+          {
+            "token": "0x1c000003",
+            "row_offset": 487758,
+            "mapping_flags": 256,
+            "mapping_flags_hex": "0x0100",
+            "member_token": "0x060008b2",
+            "member_kind": "method",
+            "member_name": "CopyIcon",
+            "import_name": "CopyIcon",
+            "import_scope_token": "0x1a000001",
+            "import_scope_name": "user32.dll",
+            "no_mangle": false,
+            "char_set": "not-specified",
+            "call_convention": "winapi",
+            "supports_last_error": false,
+            "best_fit": "assembly-default",
+            "throw_on_unmappable_char": "assembly-default",
+            "verification": "managed-declaration-only"
+          }
+        ]
+      },
+      "evidence_ids": [
+        "ev_638a128f6191085bb9af1ecd50016cd4c050b7b8fc419645f132e9c449d9304c",
+        "ev_50b24466f06b663d5302fa84d8e64656a48396a943cd11c433c21046a78fd960"
+      ],
+      "complete_boundaries_payload": {
+        "sha256": "07565a2ca4a3767ea3edd732459e6304a217e476ec4a92b37dcc1e874a101f3d",
+        "digest_encoding": "UTF-8 compact JSON with sorted object keys, ensure_ascii=false",
+        "pinvoke_imports": 147,
+        "native_implementations": 225,
+        "retention": "Original public MCP responses and complete comparison inputs remain outside Git in the named lab runs."
+      }
+    }
+  },
+  "scope": "Real shipped ShareX HelpersLib DLL broadens metadata coverage beyond empty import tables: 11 ModuleRefs, 147 PInvoke declarations, 225 native implementations. All complete normalized artifact/native-boundary fields match under unchanged baseline/pilot calls. Target and Evidence identities match; target bytes remain unchanged. No assembly execution, CLR dependency resolution or native export/runtime verification. No statistical speedup is inferred.",
+  "real_model_review": {
+    "domain": "managed-nonempty",
+    "checks": {
+      "reported_evidence_ids_observed_in_responses": true,
+      "temporary_profile_removed": true,
+      "selected_artifact_bytes_unchanged": true,
+      "target_digest": true,
+      "module_mvid": true,
+      "summary": true,
+      "all_original_module_refs": true,
+      "first3_complete_pinvoke_records": true,
+      "coverage": true,
+      "no_resource_abort": true,
+      "no_observed_oom_or_task_limit": true
+    },
+    "all_selected_checks_pass": true,
+    "differences": {},
+    "tool_errors": [],
+    "summary": {
+      "mode": "direct",
+      "requested_model": "gpt-5.6-terra",
+      "reasoning": "high",
+      "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+      "selected_artifact_sha256_before": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+      "selected_artifact_sha256_after": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+      "selected_artifact_bytes_unchanged": true,
+      "model_identity_scope": "requested alias; resolved server-side model identity is not inferred",
+      "codex_version": "codex-cli 0.161.0",
+      "exit_code": 0,
+      "timeout": false,
+      "wall_seconds": 67.738,
+      "usage": [
+        {
+          "input_tokens": 62123,
+          "cached_input_tokens": 30208,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1682,
+          "reasoning_output_tokens": 541
+        }
+      ],
+      "completed_mcp_calls": [
+        {
+          "server": "rea",
+          "tool": "inspect_managed_native_boundaries",
+          "arguments": {
+            "path": "/home/yann/yann/rea-compatibility-first-lab-20261012/real-artifacts/ShareX.HelpersLib.dll"
+          },
+          "status": "completed",
+          "error": null,
+          "codex_event_result_json_utf8_bytes": 290055
+        }
+      ],
+      "event_types": {
+        "thread.started": 1,
+        "turn.started": 1,
+        "item.completed": 3,
+        "item.started": 1,
+        "turn.completed": 1
+      },
+      "factual_correctness": "not_assessed",
+      "scope": "real_cli_trial_requires_transcript_and_fact_review"
+    },
+    "fingerprints": {
+      "runtime_revision": "259e99dd906290189217cf0fb1a19769bcf87101",
+      "selected_artifact_sha256_before": "e91bd1ec904e2bb8a1add4bb6187443b878bf33d24fe9e27f0b799bfee9de33d",
+      "enabled_tools": [
+        "inspect_managed_artifact",
+        "inspect_managed_native_boundaries",
+        "inspect_managed_members"
+      ],
+      "authority": "static",
+      "runtime_files_sha256": "c35e1d11fdfa4c93ce7600b247ebf44abbd27e514b1024ca948fdb33e82c1a3b",
+      "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+      "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+      "experiment_sources_sha256": {
+        "agent-trial.py": "6ecf7b2ecd98a1050935336d04d9f4b703e2d8519c837e7c987238456713bf1a"
+      },
+      "developer_instructions_sha256": "eaddc85aa5b141538ec280d640c62db799231b394679a17f2e6cc6bc2146a95c",
+      "prompt_sha256": "eec6b374b5bcf50cf5b7f37874ff9a933f9b6675d7eb6de8991b7d02203dacad",
+      "question_template_sha256": "6717bf17e23698f2e5fa8a8a9d672e4d1aa46df9802289f41569f8800be9b334",
+      "provider_settings_sha256": "1db4e19adcb32bb64a3baad58a1b4ef04b52ba648bab29678693f9ab8dbdabb4"
+    },
+    "answer_file_sha256": "a255934a96925ed871b75a6e7ccee7d9462aad2c8e69629874313c7d2e533671",
+    "answer_had_json_fence": false,
+    "reported_evidence_ids": [
+      "ev_50b24466f06b663d5302fa84d8e64656a48396a943cd11c433c21046a78fd960"
+    ],
+    "resource": {
+      "resource_scope": "rea-efficiency-ca12eacdb45b4e1383146b0884cb2618.scope",
+      "peak_cgroup_bytes_sampled": 804171776,
+      "elapsed_seconds": 68.014,
+      "abort": null,
+      "hard_memory_bytes": 4294967296,
+      "early_stop_bytes": 3221225472,
+      "cpu_quota_percent": 100,
+      "cpu_affinity": [15],
+      "task_ceiling": 192,
+      "peak_tasks_sampled": 103,
+      "resource_events_last_observed": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        }
+      },
+      "cpu_stat_last_observed": {
+        "usage_usec": 6635590,
+        "user_usec": 4805252,
+        "system_usec": 1830337,
+        "nr_periods": 641,
+        "nr_throttled": 3,
+        "throttled_usec": 5528,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      }
+    },
+    "scope": "Fixed selected-fact review against actual public producer observations. Equivalent explicitly named answer representations are accepted; unknowns/nulls remain checked. Limitations, unsupported claims and broader behavior still require transcript review. Token usage and failed calls are retained; zero exit status is not a factual grade."
+  },
+  "model_scope": "Actual requested gpt-5.6-terra/high Codex CLI trial; one public MCP call. All 11 exact ModuleRef rows, first three complete PInvoke rows, summary counts, MVID, coverage and observed Evidence ID match. No assembly/native execution or native-export verification.",
+  "receipt_scope": "Curated identities, counts, coverage, all ModuleRefs, first three complete PInvoke records, complete boundary payload digests, comparison assertions and model review. Complete producer tables remain in private lab outputs; no REA response or Evidence is modified."
+}

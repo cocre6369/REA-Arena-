@@ -1,0 +1,1846 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "artifact": "jq",
+  "sha256": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+  "runtime_revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+  "question": "entry-and-main",
+  "order": ["disabled switch analysis", "default"],
+  "runs": [
+    {
+      "name": "jq-main-no-switch-2",
+      "report": {
+        "revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/phase1-runtime",
+        "artifact": "jq",
+        "artifact_sha256": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "artifact_sha256_after": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "native_question": "entry-and-main",
+        "provider_settings_sha256": "482419263c88cb74e54cea93b462c6b2dc7eebb5cde2835fe97cad58dc91a5e4",
+        "measure_source_sha256": "ec94534b5c2f71acac328a9eaaa7a04e84247430eb3706d6de39d2948e6f3e89",
+        "runtime_files_sha256": "43264da8dad2d367121827711f203ee39d57689bfe908ed2fec0d9096447c9fe",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2278.523578,
+        "catalog_ms": 737.0481830000003,
+        "catalog_json_utf8_bytes": 2370505,
+        "catalog_input_definition_utf8_bytes": 496699,
+        "elapsed_ms": 174769.211421,
+        "calls": [
+          {
+            "name": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/jq-linux-amd64",
+              "provider_id": "ghidra"
+            },
+            "elapsed_ms": 165.80886999999984,
+            "client_before_send_ms": 28.324910000000273,
+            "transport_roundtrip_ms": 135.95659999999953,
+            "client_after_receive_ms": 1.5273600000000442,
+            "client_result_json_utf8_bytes": 540,
+            "runner_encoding_ms": 0.08129000000008091,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "resolve_containing_procedure",
+            "arguments": {
+              "address": "0x403a50"
+            },
+            "elapsed_ms": 163125.928365,
+            "client_before_send_ms": 58.57451100000071,
+            "transport_roundtrip_ms": 163063.22590400002,
+            "client_after_receive_ms": 4.127949999994598,
+            "client_result_json_utf8_bytes": 7788,
+            "runner_encoding_ms": 0.05243000001064502,
+            "producer_evidence_id": "ev_1ce74fd44e654ee3a6f1c70b7c120855d8bd6c956b11169460480332b7e0a4bc",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 84.71227100000033,
+                "progress": 1,
+                "message": "resolve_containing_procedure: started"
+              },
+              {
+                "elapsed_ms": 10070.074293,
+                "progress": 2,
+                "message": "ghidra_startup: Waiting for Ghidra startup (10s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 20069.031243,
+                "progress": 3,
+                "message": "ghidra_startup: Waiting for Ghidra startup (20s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 30069.230861000004,
+                "progress": 4,
+                "message": "ghidra_startup: Waiting for Ghidra startup (30s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 40069.818898,
+                "progress": 5,
+                "message": "ghidra_startup: Waiting for Ghidra startup (40s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 50068.880413,
+                "progress": 6,
+                "message": "ghidra_startup: Waiting for Ghidra startup (50s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 60069.830916,
+                "progress": 7,
+                "message": "ghidra_startup: Waiting for Ghidra startup (60s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 70069.17570699999,
+                "progress": 8,
+                "message": "ghidra_startup: Waiting for Ghidra startup (70s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 80069.42899700001,
+                "progress": 9,
+                "message": "ghidra_startup: Waiting for Ghidra startup (80s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 90069.754166,
+                "progress": 10,
+                "message": "ghidra_startup: Waiting for Ghidra startup (90s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 100068.82376200001,
+                "progress": 11,
+                "message": "ghidra_startup: Waiting for Ghidra startup (100s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 110069.45972799999,
+                "progress": 12,
+                "message": "ghidra_startup: Waiting for Ghidra startup (110s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 120070.51519199999,
+                "progress": 13,
+                "message": "ghidra_startup: Waiting for Ghidra startup (120s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 130070.89454399998,
+                "progress": 14,
+                "message": "ghidra_startup: Waiting for Ghidra startup (130s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 140070.423735,
+                "progress": 15,
+                "message": "ghidra_startup: Waiting for Ghidra startup (140s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 150070.126304,
+                "progress": 16,
+                "message": "ghidra_startup: Waiting for Ghidra startup (150s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 160069.545803,
+                "progress": 17,
+                "message": "ghidra_startup: Waiting for Ghidra startup (160s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 163115.825735,
+                "progress": 18,
+                "message": "resolve_containing_procedure: completed"
+              }
+            ]
+          },
+          {
+            "name": "analyze_function",
+            "arguments": {
+              "procedure": "0x403a50"
+            },
+            "elapsed_ms": 520.3806500000064,
+            "client_before_send_ms": 160.59502999999677,
+            "transport_roundtrip_ms": 326.4811200000113,
+            "client_after_receive_ms": 33.30449999999837,
+            "client_result_json_utf8_bytes": 71688,
+            "runner_encoding_ms": 0.30467899999348447,
+            "producer_evidence_id": "ev_8e30bdf5482a86cc0451384e451460be2c4839139ba087670ed687d1b8155d1e",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 248.83494999998948,
+                "progress": 1,
+                "message": "analyze_function: started"
+              },
+              {
+                "elapsed_ms": 438.57899000000907,
+                "progress": 1,
+                "message": "analyze_function: completed"
+              }
+            ]
+          },
+          {
+            "name": "analyze_function",
+            "arguments": {
+              "procedure": "0x401f00"
+            },
+            "elapsed_ms": 6631.527445000014,
+            "client_before_send_ms": 0.31817000001319684,
+            "transport_roundtrip_ms": 6630.977025,
+            "client_after_receive_ms": 0.23225000000093132,
+            "client_result_json_utf8_bytes": 2013,
+            "runner_encoding_ms": 0.12941999998292886,
+            "producer_evidence_id": null,
+            "is_error": true,
+            "progress": [
+              {
+                "elapsed_ms": 21.97787000000244,
+                "progress": 1,
+                "message": "analyze_function: started"
+              },
+              {
+                "elapsed_ms": 5501.906724,
+                "progress": 1,
+                "message": "analyze_function: completed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "procedure",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 311.8612509999948,
+            "client_before_send_ms": 171.58319000000483,
+            "transport_roundtrip_ms": 124.93054100000882,
+            "client_after_receive_ms": 15.34751999998116,
+            "client_result_json_utf8_bytes": 33056,
+            "runner_encoding_ms": 0.10657000000355765,
+            "producer_evidence_id": "ev_d13e1a7cc89acf020440c1e93add5c24fc63ff5d28f4a40618d3b2f2cf6cf6fc",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "pseudocode",
+                "offset": 0,
+                "limit": 65536
+              }
+            },
+            "elapsed_ms": 38.75368999998318,
+            "client_before_send_ms": 0.33629999999538995,
+            "transport_roundtrip_ms": 37.855080000008456,
+            "client_after_receive_ms": 0.562309999979334,
+            "client_result_json_utf8_bytes": 126184,
+            "runner_encoding_ms": 0.2102500000037253,
+            "producer_evidence_id": "ev_7299d746c72210e43cc98f479a4889de3ec79b35479a6ce6da2ea6d60df0facd",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "referenced_strings",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 56.37748000002466,
+            "client_before_send_ms": 0.2615900000091642,
+            "transport_roundtrip_ms": 55.50757000001613,
+            "client_after_receive_ms": 0.6083199999993667,
+            "client_result_json_utf8_bytes": 44170,
+            "runner_encoding_ms": 0.10297999999602325,
+            "producer_evidence_id": "ev_676c67210ef6760489ef81ad25d4b8c9d882832a67270dc3b9a5dcb484db748d",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "referenced_strings",
+                "offset": 64,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 45.07362999999896,
+            "client_before_send_ms": 0.3225899999961257,
+            "transport_roundtrip_ms": 44.097389999980805,
+            "client_after_receive_ms": 0.6536500000220258,
+            "client_result_json_utf8_bytes": 29329,
+            "runner_encoding_ms": 0.0782900000049267,
+            "producer_evidence_id": "ev_911d52be7fdd60a7498880bffd95e9560797b8aeff381c98a457110299e18c28",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "callees",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 51.77530999999726,
+            "client_before_send_ms": 0.293439999979455,
+            "transport_roundtrip_ms": 50.873560000007274,
+            "client_after_receive_ms": 0.6083100000105333,
+            "client_result_json_utf8_bytes": 77878,
+            "runner_encoding_ms": 0.2520000000076834,
+            "producer_evidence_id": "ev_110c26a9920d35c2373a7ea5bb97e6abea166307f124f5b5dc91778a7442ed8a",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "callers",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 53.344169999996666,
+            "client_before_send_ms": 0.2847299999848474,
+            "transport_roundtrip_ms": 52.32209000000148,
+            "client_after_receive_ms": 0.7373500000103377,
+            "client_result_json_utf8_bytes": 24552,
+            "runner_encoding_ms": 0.07847000000765547,
+            "producer_evidence_id": "ev_aa38401849117c244f340c5a0108d0875cbe7b73accc6917ce876a6a723e0b97",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "basic_blocks",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "elapsed_ms": 53.91585999997915,
+            "client_before_send_ms": 0.26300999999511987,
+            "transport_roundtrip_ms": 52.96653000000515,
+            "client_after_receive_ms": 0.6863199999788776,
+            "client_result_json_utf8_bytes": 24704,
+            "runner_encoding_ms": 0.08173000000533648,
+            "producer_evidence_id": "ev_2751a8242e08182e411f34da9b6a5bfafed0b67013c70b7e7ab68267692b54d6",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "close_binary",
+            "arguments": {},
+            "elapsed_ms": 492.77528000000166,
+            "client_before_send_ms": 11.851030000019819,
+            "transport_roundtrip_ms": 480.33745999998064,
+            "client_after_receive_ms": 0.5867900000012014,
+            "client_result_json_utf8_bytes": 92,
+            "runner_encoding_ms": 0.008600000001024455,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 14.918790000025183,
+                "progress": 1,
+                "message": "close_binary: started"
+              },
+              {
+                "elapsed_ms": 491.21172000002116,
+                "progress": 2,
+                "message": "close_binary: completed"
+              }
+            ]
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resources": {
+        "resource_scope": "rea-efficiency-f75e8b2a46b34648886d2975e3399d94.scope",
+        "peak_cgroup_bytes_sampled": 1211699200,
+        "elapsed_seconds": 175.968,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 43,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 174946305,
+          "user_usec": 170796079,
+          "system_usec": 4150226,
+          "nr_periods": 1758,
+          "nr_throttled": 197,
+          "throttled_usec": 79741,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "elf",
+          "architecture": "x86_64",
+          "available_architectures": ["x86_64"],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "resolved-call-reference-diagnostics-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-v1",
+          "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default+disabled:Decompiler Switch Analysis",
+          "analysis_options": {
+            "disabled_analyzers": ["Decompiler Switch Analysis"]
+          }
+        },
+        "digest": "3054b11ff77cf6153d3abd438396bdcc7ac40711ecf03696da6242acba99dc42"
+      },
+      "entry_procedure": {
+        "address": "0x403a50",
+        "name": "entry",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x403a50",
+              "end": "0x403a75"
+            }
+          ],
+          "total_bytes": 38,
+          "span_bytes": 38,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined processEntry entry()",
+        "locals": [
+          {
+            "description": "undefined8 local_10 @ Stack[-0x10]:8",
+            "provenance": "ghidra-function-database"
+          }
+        ]
+      },
+      "main_facets": {
+        "procedure": {
+          "items_sha256": "ca09a48d34fd30cba04fe07cbedf5afee370a2fcdb445ab77c539bc2398878a4",
+          "pages": [
+            {
+              "coverage": {
+                "status": "complete-within-view",
+                "examined": 1,
+                "total": 1,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "pseudocode": {
+          "items_sha256": "157ede0c33770a3886271e22a394b47f92265d07b70da157feff19301878ac03",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 48726,
+                "total": 48726,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "referenced_strings": {
+          "items_sha256": "e718ba6c3528e7bd872a68280944420fab17de91fc5f42edbb8c56e12cf60c52",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 64,
+                "total": 92,
+                "next_offset": 64,
+                "exhausted": false
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            },
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 28,
+                "total": 92,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "callees": {
+          "items_sha256": "c91d072cc184ec3edfb51f3f4d5fa3b18667a63d46f73432b4df5b8197f339ef",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 60,
+                "total": 60,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "callers": {
+          "items_sha256": "cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05",
+          "pages": [
+            {
+              "coverage": {
+                "status": "empty",
+                "examined": 0,
+                "total": 0,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "basic_blocks": {
+          "items_sha256": "87e00639e95aeaf9bfd87f317e570616015d313a472b463df20c6fd33dbe871d",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 1,
+                "total": 226,
+                "next_offset": 1,
+                "exhausted": false
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        }
+      },
+      "changed_callee": {
+        "address": "0x40daa0",
+        "name": "FUN_0040daa0",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x40daa0",
+              "end": "0x40daf5"
+            },
+            {
+              "start": "0x40db10",
+              "end": "0x40db32"
+            },
+            {
+              "start": "0x40dc98",
+              "end": "0x40dcbd"
+            },
+            {
+              "start": "0x40dd21",
+              "end": "0x40dd25"
+            }
+          ],
+          "total_bytes": 164,
+          "span_bytes": 646,
+          "non_contiguous": true,
+          "contains_entry": true
+        }
+      },
+      "evidence_ids": [
+        "ev_1ce74fd44e654ee3a6f1c70b7c120855d8bd6c956b11169460480332b7e0a4bc",
+        "ev_8e30bdf5482a86cc0451384e451460be2c4839139ba087670ed687d1b8155d1e",
+        "ev_72eb4686ca75621e943e37980f545178d033e8acac0dc2abea056fb64503d124",
+        "ev_d13e1a7cc89acf020440c1e93add5c24fc63ff5d28f4a40618d3b2f2cf6cf6fc",
+        "ev_7299d746c72210e43cc98f479a4889de3ec79b35479a6ce6da2ea6d60df0facd",
+        "ev_676c67210ef6760489ef81ad25d4b8c9d882832a67270dc3b9a5dcb484db748d",
+        "ev_911d52be7fdd60a7498880bffd95e9560797b8aeff381c98a457110299e18c28",
+        "ev_110c26a9920d35c2373a7ea5bb97e6abea166307f124f5b5dc91778a7442ed8a",
+        "ev_aa38401849117c244f340c5a0108d0875cbe7b73accc6917ce876a6a723e0b97",
+        "ev_2751a8242e08182e411f34da9b6a5bfafed0b67013c70b7e7ab68267692b54d6"
+      ]
+    },
+    {
+      "name": "jq-main-default-2",
+      "report": {
+        "revision": "f110618184e99f89fa776bc5e59703a61baa7c57",
+        "runtime_root": "/home/yann/yann/rea-compatibility-first-lab-20261012/phase1-runtime",
+        "artifact": "jq",
+        "artifact_sha256": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "artifact_sha256_after": "b1c22172dd303f3be49e935aa56aa48a8b7a46e0bc838b4997d3bb451495870f",
+        "delivery": "complete",
+        "sdk_schema_mode": "selected",
+        "native_question": "entry-and-main",
+        "provider_settings_sha256": "8f391e4f78bad489477f8b5e7f6cb156d49e8cecf94671bbc4088f35d97488c2",
+        "measure_source_sha256": "ec94534b5c2f71acac328a9eaaa7a04e84247430eb3706d6de39d2948e6f3e89",
+        "runtime_files_sha256": "43264da8dad2d367121827711f203ee39d57689bfe908ed2fec0d9096447c9fe",
+        "runtime_dispatcher_sha256": "d9d9ddf93ea61619fb20e619c218a004fb1f17e823f142f0be9f851ca7030480",
+        "package_lock_sha256": "0a55042141899a442a39dce3d49755c65a861f86d1930bd4f9c6d89cd53f5eba",
+        "node_version": "v24.18.0",
+        "sdk_client_version": "2.3.1",
+        "sdk_server_version": "2.3.1",
+        "platform": "linux",
+        "architecture": "x64",
+        "connected_ms": 2182.560401,
+        "catalog_ms": 720.1494199999997,
+        "catalog_json_utf8_bytes": 2370505,
+        "catalog_input_definition_utf8_bytes": 496699,
+        "elapsed_ms": 276234.553433,
+        "calls": [
+          {
+            "name": "open_binary",
+            "arguments": {
+              "path": "/home/yann/yann/rea-benchmark-lab-20261011/real-artifacts/jq-linux-amd64",
+              "provider_id": "ghidra"
+            },
+            "elapsed_ms": 107.45605000000023,
+            "client_before_send_ms": 28.30657999999994,
+            "transport_roundtrip_ms": 77.66998899999999,
+            "client_after_receive_ms": 1.4794810000003054,
+            "client_result_json_utf8_bytes": 540,
+            "runner_encoding_ms": 0.0842889999998988,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "resolve_containing_procedure",
+            "arguments": {
+              "address": "0x403a50"
+            },
+            "elapsed_ms": 265842.923778,
+            "client_before_send_ms": 68.33298000000013,
+            "transport_roundtrip_ms": 265770.502958,
+            "client_after_receive_ms": 4.087839999992866,
+            "client_result_json_utf8_bytes": 7564,
+            "runner_encoding_ms": 0.0543100000359118,
+            "producer_evidence_id": "ev_573de2f0a9a9b9df983d797b040dade947dd8734e7c8edc4b103676a4fd7ce31",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 91.63959999999952,
+                "progress": 1,
+                "message": "resolve_containing_procedure: started"
+              },
+              {
+                "elapsed_ms": 10078.682614000001,
+                "progress": 2,
+                "message": "ghidra_startup: Waiting for Ghidra startup (10s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 20077.440788,
+                "progress": 3,
+                "message": "ghidra_startup: Waiting for Ghidra startup (19s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 30082.788849999997,
+                "progress": 4,
+                "message": "ghidra_startup: Waiting for Ghidra startup (30s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 40082.797471,
+                "progress": 5,
+                "message": "ghidra_startup: Waiting for Ghidra startup (40s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 50082.25819,
+                "progress": 6,
+                "message": "ghidra_startup: Waiting for Ghidra startup (50s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 60083.203099,
+                "progress": 7,
+                "message": "ghidra_startup: Waiting for Ghidra startup (60s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 70082.67757599999,
+                "progress": 8,
+                "message": "ghidra_startup: Waiting for Ghidra startup (70s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 80081.96989299999,
+                "progress": 9,
+                "message": "ghidra_startup: Waiting for Ghidra startup (80s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 90083.187788,
+                "progress": 10,
+                "message": "ghidra_startup: Waiting for Ghidra startup (90s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 100081.97016099999,
+                "progress": 11,
+                "message": "ghidra_startup: Waiting for Ghidra startup (100s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 110083.246764,
+                "progress": 12,
+                "message": "ghidra_startup: Waiting for Ghidra startup (110s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 120081.92022599999,
+                "progress": 13,
+                "message": "ghidra_startup: Waiting for Ghidra startup (120s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 130082.241127,
+                "progress": 14,
+                "message": "ghidra_startup: Waiting for Ghidra startup (130s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 140081.954696,
+                "progress": 15,
+                "message": "ghidra_startup: Waiting for Ghidra startup (140s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 150082.789825,
+                "progress": 16,
+                "message": "ghidra_startup: Waiting for Ghidra startup (150s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 160081.965663,
+                "progress": 17,
+                "message": "ghidra_startup: Waiting for Ghidra startup (160s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 170082.41210000002,
+                "progress": 18,
+                "message": "ghidra_startup: Waiting for Ghidra startup (170s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 180082.606516,
+                "progress": 19,
+                "message": "ghidra_startup: Waiting for Ghidra startup (180s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 190081.889651,
+                "progress": 20,
+                "message": "ghidra_startup: Waiting for Ghidra startup (190s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 200082.579434,
+                "progress": 21,
+                "message": "ghidra_startup: Waiting for Ghidra startup (200s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 210084.06259800002,
+                "progress": 22,
+                "message": "ghidra_startup: Waiting for Ghidra startup (210s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 220082.22151,
+                "progress": 23,
+                "message": "ghidra_startup: Waiting for Ghidra startup (220s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 230082.557351,
+                "progress": 24,
+                "message": "ghidra_startup: Waiting for Ghidra startup (230s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 240083.15674200002,
+                "progress": 25,
+                "message": "ghidra_startup: Waiting for Ghidra startup (240s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 250083.616442,
+                "progress": 26,
+                "message": "ghidra_startup: Waiting for Ghidra startup (250s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 260082.60232000003,
+                "progress": 27,
+                "message": "ghidra_startup: Waiting for Ghidra startup (260s elapsed); import, auto-analysis and bridge readiness may still be pending"
+              },
+              {
+                "elapsed_ms": 265826.39610799996,
+                "progress": 28,
+                "message": "resolve_containing_procedure: completed"
+              }
+            ]
+          },
+          {
+            "name": "analyze_function",
+            "arguments": {
+              "procedure": "0x403a50"
+            },
+            "elapsed_ms": 427.7189490000019,
+            "client_before_send_ms": 147.58638000005158,
+            "transport_roundtrip_ms": 266.6231689999695,
+            "client_after_receive_ms": 13.509399999980815,
+            "client_result_json_utf8_bytes": 71464,
+            "runner_encoding_ms": 0.22766000003321096,
+            "producer_evidence_id": "ev_75524e29a645561862fe08119982fecf3f231ca831a112803dc3ae6731d65bae",
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 248.0263800000539,
+                "progress": 1,
+                "message": "analyze_function: started"
+              },
+              {
+                "elapsed_ms": 375.0233390000067,
+                "progress": 1,
+                "message": "analyze_function: completed"
+              }
+            ]
+          },
+          {
+            "name": "analyze_function",
+            "arguments": {
+              "procedure": "0x401f00"
+            },
+            "elapsed_ms": 5647.04629800003,
+            "client_before_send_ms": 0.3147300000418909,
+            "transport_roundtrip_ms": 5646.486586999963,
+            "client_after_receive_ms": 0.244981000025291,
+            "client_result_json_utf8_bytes": 2013,
+            "runner_encoding_ms": 0.11148000002140179,
+            "producer_evidence_id": null,
+            "is_error": true,
+            "progress": [
+              {
+                "elapsed_ms": 19.285210000001825,
+                "progress": 1,
+                "message": "analyze_function: started"
+              },
+              {
+                "elapsed_ms": 4578.828640000022,
+                "progress": 1,
+                "message": "analyze_function: completed"
+              }
+            ]
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "procedure",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 287.50777999998536,
+            "client_before_send_ms": 156.98671999998624,
+            "transport_roundtrip_ms": 117.99486000003526,
+            "client_after_receive_ms": 12.526199999963865,
+            "client_result_json_utf8_bytes": 33056,
+            "runner_encoding_ms": 0.09123000002000481,
+            "producer_evidence_id": "ev_7544aa26e6d48a1301525aa7550e26f3fd6fb593a91fd829e61aca48e8fb6931",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "pseudocode",
+                "offset": 0,
+                "limit": 65536
+              }
+            },
+            "elapsed_ms": 39.28921999997692,
+            "client_before_send_ms": 0.3408099999651313,
+            "transport_roundtrip_ms": 38.38605000003008,
+            "client_after_receive_ms": 0.5623599999817088,
+            "client_result_json_utf8_bytes": 126184,
+            "runner_encoding_ms": 0.2190100000007078,
+            "producer_evidence_id": "ev_7447e1fb21b67ac4c59d7fe0711da033b423b5c1e0af37359691c63ea5f3bf44",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "referenced_strings",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 53.67069999995874,
+            "client_before_send_ms": 0.2537700000102632,
+            "transport_roundtrip_ms": 52.789269000000786,
+            "client_after_receive_ms": 0.6276609999476932,
+            "client_result_json_utf8_bytes": 44170,
+            "runner_encoding_ms": 0.10104999999748543,
+            "producer_evidence_id": "ev_a6d295d7e68771c2aee1ffc3322b6923bbfaf980c6185fa666ebc01e743bac5d",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "referenced_strings",
+                "offset": 64,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 44.617840000020806,
+            "client_before_send_ms": 0.2887699999846518,
+            "transport_roundtrip_ms": 43.68703999998979,
+            "client_after_receive_ms": 0.6420300000463612,
+            "client_result_json_utf8_bytes": 29329,
+            "runner_encoding_ms": 0.06996000005165115,
+            "producer_evidence_id": "ev_dfbe402edeb511c987066bb2c1183033a057ff1cd576971a8535e4c728fd078c",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "callees",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 46.91762899997411,
+            "client_before_send_ms": 0.22824899997795,
+            "transport_roundtrip_ms": 46.203619999985676,
+            "client_after_receive_ms": 0.4857600000104867,
+            "client_result_json_utf8_bytes": 78214,
+            "runner_encoding_ms": 0.1870399999897927,
+            "producer_evidence_id": "ev_966de7ad744f746bffaff0666d1a848f5c325347db3aa9747b75b9220f92169d",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "callers",
+                "offset": 0,
+                "limit": 64
+              }
+            },
+            "elapsed_ms": 47.29589000000851,
+            "client_before_send_ms": 0.20131999999284744,
+            "transport_roundtrip_ms": 46.49735999997938,
+            "client_after_receive_ms": 0.5972100000362843,
+            "client_result_json_utf8_bytes": 24552,
+            "runner_encoding_ms": 0.06488999997964129,
+            "producer_evidence_id": "ev_320c3c8cf56489cde1dadb9ffa242af87849508d254638af925cbaa725ebc56c",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "inspect_analysis_view",
+            "arguments": {
+              "source": {
+                "kind": "retained-evidence",
+                "evidence_id": "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d"
+              },
+              "view": {
+                "kind": "native",
+                "facet": "basic_blocks",
+                "offset": 0,
+                "limit": 1
+              }
+            },
+            "elapsed_ms": 44.54829999996582,
+            "client_before_send_ms": 0.22829999995883554,
+            "transport_roundtrip_ms": 43.768470000009984,
+            "client_after_receive_ms": 0.5515299999970011,
+            "client_result_json_utf8_bytes": 24704,
+            "runner_encoding_ms": 0.05904000002192333,
+            "producer_evidence_id": "ev_30af239bcdc5a4eb4f9986a3d9860bd528825b3e204c7fbc4643216c7e4d0027",
+            "is_error": false,
+            "progress": []
+          },
+          {
+            "name": "close_binary",
+            "arguments": {},
+            "elapsed_ms": 518.9090190000134,
+            "client_before_send_ms": 3.2075100000365637,
+            "transport_roundtrip_ms": 515.0559289999655,
+            "client_after_receive_ms": 0.6455800000112504,
+            "client_result_json_utf8_bytes": 92,
+            "runner_encoding_ms": 0.010630000033415854,
+            "producer_evidence_id": null,
+            "is_error": false,
+            "progress": [
+              {
+                "elapsed_ms": 11.382270000001881,
+                "progress": 1,
+                "message": "close_binary: started"
+              },
+              {
+                "elapsed_ms": 516.6519379999954,
+                "progress": 2,
+                "message": "close_binary: completed"
+              }
+            ]
+          }
+        ],
+        "failure": null,
+        "measurement_scope": "Public SDK Transport timestamps split client work from the transport/server roundtrip; parsed result JSON bytes are not raw wire bytes; runner encoding and writes are outside each call; engine-stage durations and independent producer truth are not inferred"
+      },
+      "resources": {
+        "resource_scope": "rea-efficiency-179644e4f08b48baadf7a6c46aa19cf3.scope",
+        "peak_cgroup_bytes_sampled": 1243893760,
+        "elapsed_seconds": 277.343,
+        "abort": null,
+        "hard_memory_bytes": 4294967296,
+        "early_stop_bytes": 3221225472,
+        "cpu_quota_percent": 100,
+        "cpu_affinity": [15],
+        "task_ceiling": 192,
+        "peak_tasks_sampled": 49,
+        "resource_events_last_observed": {
+          "memory.events": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0,
+            "oom_group_kill": 0
+          },
+          "pids.events": {
+            "max": 0
+          }
+        },
+        "cpu_stat_last_observed": {
+          "usage_usec": 275769261,
+          "user_usec": 269788807,
+          "system_usec": 5980453,
+          "nr_periods": 2772,
+          "nr_throttled": 223,
+          "throttled_usec": 49889,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "ghidra",
+          "name": "Ghidra",
+          "version": "12.1.4"
+        },
+        "parameters": {
+          "target_kind": "executable",
+          "target_format": "elf",
+          "architecture": "x86_64",
+          "available_architectures": ["x86_64"],
+          "import_mode": "ephemeral-source-immutable",
+          "annotation_policy": "atomic-function-entry-metadata-v1",
+          "load_image_observations": "source-mappings-entry-context-v2",
+          "function_body_evidence": "complete-inclusive-ranges-v1",
+          "function_references": "complete-body-and-entry-reference-manager-v2",
+          "call_relationship_coverage": "resolved-call-reference-diagnostics-v1",
+          "string_inventory_evidence": "defined-data-coverage-v1",
+          "location_resolution": "explicit-address-exact-entry-symbol-first-v3",
+          "instruction_flow_evidence": "decoded-return-pcode-v1",
+          "instruction_references": "exact-address-incoming-v1",
+          "function_boundary_observations": "ghidra-terminal-call-limitations-v1",
+          "no_return_repair": "returning-imports-decoded-return-v2",
+          "process_launch": "inspected-jvm-launch-support-v1",
+          "jump_table_evidence": "typed-case-default-blocks-v1",
+          "decompiler_jump_loads": true,
+          "loader": "auto-from-header",
+          "language_id": "auto-from-header",
+          "compiler_spec_id": "auto-default",
+          "analyzer_preset": "ghidra-default"
+        },
+        "digest": "b1bfa22c7ac31f3af27e0f8335c3c43067002a33b78a028bec0db9a3f5d0df0d"
+      },
+      "entry_procedure": {
+        "address": "0x403a50",
+        "name": "entry",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x403a50",
+              "end": "0x403a75"
+            }
+          ],
+          "total_bytes": 38,
+          "span_bytes": 38,
+          "non_contiguous": false,
+          "contains_entry": true
+        },
+        "signature": "undefined processEntry entry()",
+        "locals": [
+          {
+            "description": "undefined8 local_10 @ Stack[-0x10]:8",
+            "provenance": "ghidra-function-database"
+          }
+        ]
+      },
+      "main_facets": {
+        "procedure": {
+          "items_sha256": "ca09a48d34fd30cba04fe07cbedf5afee370a2fcdb445ab77c539bc2398878a4",
+          "pages": [
+            {
+              "coverage": {
+                "status": "complete-within-view",
+                "examined": 1,
+                "total": 1,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "pseudocode": {
+          "items_sha256": "157ede0c33770a3886271e22a394b47f92265d07b70da157feff19301878ac03",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 48726,
+                "total": 48726,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "referenced_strings": {
+          "items_sha256": "e718ba6c3528e7bd872a68280944420fab17de91fc5f42edbb8c56e12cf60c52",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 64,
+                "total": 92,
+                "next_offset": 64,
+                "exhausted": false
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            },
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 28,
+                "total": 92,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "callees": {
+          "items_sha256": "72c084d50d01df8284ab56375b3f8b7959c94cc5e42d8fc5efa54f2860749649",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 60,
+                "total": 60,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "callers": {
+          "items_sha256": "cf1cbb66a638b4860a516671fb74850e6ccf787fe6c4c8d29e9c04efe880bd05",
+          "pages": [
+            {
+              "coverage": {
+                "status": "empty",
+                "examined": 0,
+                "total": 0,
+                "next_offset": null,
+                "exhausted": true
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        },
+        "basic_blocks": {
+          "items_sha256": "87e00639e95aeaf9bfd87f317e570616015d313a472b463df20c6fd33dbe871d",
+          "pages": [
+            {
+              "coverage": {
+                "status": "page",
+                "examined": 1,
+                "total": 226,
+                "next_offset": 1,
+                "exhausted": false
+              },
+              "limitations": [
+                "Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.",
+                "Def-use links do not cross function boundaries and may omit memory aliasing, call side effects, or unresolved indirect flow.",
+                "Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.",
+                "Ghidra Listing reports a terminal call at 0x4028be to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x4029ef to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402c68 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e26 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402e30 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x402f5a to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "Ghidra Listing reports a terminal call at 0x403941 to 0x49c0f0 FUN_0049c0f0 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.",
+                "High p-code is decompiler-derived, not original source or runtime behavior. is_dead preserves the Java AST flag; decoded block members can retain that flag, so block_membership separately reports actual syntax-tree membership.",
+                "Known omitted-edge counts cover links omitted from retained operations; omitted operations may contain additional uncounted links.",
+                "Memory read/write effects include stack and temporary memory operations; they do not identify persistent state or business meaning.",
+                "Operation, input, and def-use limits can truncate large functions; inspect truncation, omitted lower bounds, and known omitted counts before drawing conclusions.",
+                "Pseudocode and assembly are Ghidra-specific representations, not original source or Hopper-equivalent text.",
+                "Pseudocode is neither original source nor guaranteed to compile.",
+                "References cover the complete Ghidra function-body AddressSet and exact entry. Dossier incoming edges omit sources owned by that function; procedure_references also retains those internal edges.",
+                "Register variables, compiler-generated blocks, and pointer arithmetic remain decompiler artifacts.",
+                "Resolved reference metadata identifies computed, indirect, external, call, jump, and data edges; unresolved targetless flows remain unknown, and function classifications distinguish thunks and externals.",
+                "Synthetic Ghidra entry-point references without actionable memory sources are omitted.",
+                "The Java bridge serializes one function request per Program and lets each decompilation run until it completes or the caller cancels.",
+                "The dossier combines Ghidra FunctionManager, Listing, ReferenceManager, BasicBlockModel, and decompiler observations; provider-specific pseudocode and assembly are not cross-provider text invariants.",
+                "The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.",
+                "The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.",
+                "Thunk and external classifications are Ghidra FunctionManager observations; they do not resolve targetless calls.",
+                "Types and calling conventions are Ghidra decompiler observations, not source declarations.",
+                "Unresolved computed or indirect flows without target addresses are not represented as reference edges."
+              ],
+              "unknowns": [
+                "native_value_flow is truncated; omitted observations remain unknown"
+              ]
+            }
+          ]
+        }
+      },
+      "changed_callee": {
+        "address": "0x40daa0",
+        "name": "FUN_0040daa0",
+        "classification": {
+          "external": false,
+          "thunk": false,
+          "thunk_target": null,
+          "provenance": "ghidra-function-manager"
+        },
+        "body": {
+          "available": true,
+          "provenance": "ghidra-function-body-address-set",
+          "ranges": [
+            {
+              "start": "0x40daa0",
+              "end": "0x40daf5"
+            },
+            {
+              "start": "0x40db00",
+              "end": "0x40db32"
+            },
+            {
+              "start": "0x40db38",
+              "end": "0x40db60"
+            },
+            {
+              "start": "0x40db68",
+              "end": "0x40dc18"
+            },
+            {
+              "start": "0x40dc20",
+              "end": "0x40dc52"
+            },
+            {
+              "start": "0x40dc58",
+              "end": "0x40dc94"
+            },
+            {
+              "start": "0x40dc98",
+              "end": "0x40dcd2"
+            },
+            {
+              "start": "0x40dcd8",
+              "end": "0x40dd25"
+            }
+          ],
+          "total_bytes": 604,
+          "span_bytes": 646,
+          "non_contiguous": true,
+          "contains_entry": true
+        }
+      },
+      "evidence_ids": [
+        "ev_573de2f0a9a9b9df983d797b040dade947dd8734e7c8edc4b103676a4fd7ce31",
+        "ev_75524e29a645561862fe08119982fecf3f231ca831a112803dc3ae6731d65bae",
+        "ev_be96b3a29410decf7d15846ae24265195653738fc13b1aea3299a8d803f9524d",
+        "ev_7544aa26e6d48a1301525aa7550e26f3fd6fb593a91fd829e61aca48e8fb6931",
+        "ev_7447e1fb21b67ac4c59d7fe0711da033b423b5c1e0af37359691c63ea5f3bf44",
+        "ev_a6d295d7e68771c2aee1ffc3322b6923bbfaf980c6185fa666ebc01e743bac5d",
+        "ev_dfbe402edeb511c987066bb2c1183033a057ff1cd576971a8535e4c728fd078c",
+        "ev_966de7ad744f746bffaff0666d1a848f5c325347db3aa9747b75b9220f92169d",
+        "ev_320c3c8cf56489cde1dadb9ffa242af87849508d254638af925cbaa725ebc56c",
+        "ev_30af239bcdc5a4eb4f9986a3d9860bd528825b3e204c7fbc4643216c7e4d0027"
+      ]
+    }
+  ],
+  "decision": "Keep production defaults. This single task-scoped pair is faster with disabled Decompiler Switch Analysis, but a callee recovered body changes from 604 bytes in 8 ranges to 164 bytes in 4 ranges with the same 646-byte span. Identical main pseudocode, strings and block counts do not establish call-graph equivalence. This is an explicitly selected experimental recipe, not a global safe preset or a statistical speedup. Both complete main dossiers exceed the MCP frame and are read via existing retained native views; observed transport errors remain counted.",
+  "invalid_name_probe": {
+    "target_sha256": "c79bf44242829108e323378531f4ac839513ca1fba45efd6583643526e1e9fd2",
+    "target_sha256_after": "c79bf44242829108e323378531f4ac839513ca1fba45efd6583643526e1e9fd2",
+    "expected_analyzer": "REA Nonexistent Analyzer",
+    "rejected": true,
+    "rejection_names_requested_analyzer": true,
+    "failure": null,
+    "calls": [
+      {
+        "name": "open_binary",
+        "is_error": false
+      },
+      {
+        "name": "resolve_containing_procedure",
+        "is_error": true
+      },
+      {
+        "name": "close_binary",
+        "is_error": false
+      }
+    ],
+    "oracle": "A syntactically valid but nonexistent analyzer must produce a meaningful public refusal, not successful Evidence claiming that preset. A not-found procedure still means Ghidra reached readiness."
+  }
+}
