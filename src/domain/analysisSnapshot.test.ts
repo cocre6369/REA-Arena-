@@ -118,6 +118,52 @@ describe("analysis snapshot target identity", () => {
       "entry_point",
     );
   });
+
+  it("partitions session and snapshot identity by the selected dSYM", () => {
+    const base: BinaryTarget = {
+      path: "/fixture/pair",
+      sha256: ANALYSIS_SNAPSHOT_TARGET.sha256,
+      kind: "executable",
+      format: "mach-o",
+      architecture: "arm64",
+      availableArchitectures: ["arm64"],
+    };
+    const companion = {
+      sourcePath: "/fixture/pair.dSYM",
+      memberPath: "/fixture/pair.dSYM/Contents/Resources/DWARF/pair",
+      memberSha256: "a".repeat(64),
+      uuid: "A1B2C3D4-E5F6-0789-ABCD-EF0123456789",
+    };
+    const withCompanion = { ...base, debugCompanion: companion };
+    expect(snapshotMatchesTarget(snapshotTarget(base), base)).toBe(true);
+    expect(
+      snapshotMatchesTarget(snapshotTarget(withCompanion), withCompanion),
+    ).toBe(true);
+    // Omitting the companion after using one, or adding one after a bare open,
+    // is a different analysis input and must not reuse the retained session.
+    expect(snapshotMatchesTarget(snapshotTarget(withCompanion), base)).toBe(
+      false,
+    );
+    expect(snapshotMatchesTarget(snapshotTarget(base), withCompanion)).toBe(
+      false,
+    );
+    // A different companion is a different identity too.
+    expect(
+      snapshotMatchesTarget(snapshotTarget(withCompanion), {
+        ...base,
+        debugCompanion: {
+          ...companion,
+          uuid: "99999999-9999-9999-9999-999999999999",
+        },
+      }),
+    ).toBe(false);
+    // Snapshots persisted before companion admission carry no field and match
+    // only a bare target.
+    const legacy = snapshotTarget(base);
+    delete (legacy as Record<string, unknown>).debug_companion;
+    expect(snapshotMatchesTarget(legacy, base)).toBe(true);
+    expect(snapshotMatchesTarget(legacy, withCompanion)).toBe(false);
+  });
 });
 
 describe("analysis snapshot contract", () => {

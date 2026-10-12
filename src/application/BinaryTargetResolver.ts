@@ -175,10 +175,18 @@ export const parseBinaryTarget = async (
           availableArchitectures: ["x86"],
         });
       }
-      if (
+      const databaseTarget =
         targetKind === "database" ||
-        (targetKind === undefined && path.toLowerCase().endsWith(".hop"))
-      )
+        (targetKind === undefined && path.toLowerCase().endsWith(".hop"));
+      if (databaseTarget && dsymPath !== undefined)
+        return err(
+          new BinaryTargetError(
+            path,
+            "dsym_path applies only to Mach-O executable targets; this target is an analysis database",
+            { constraint: "debug_companion_rejected" },
+          ),
+        );
+      if (databaseTarget)
         return ok({
           path,
           sourcePath: process.platform === "win32" ? candidate : canonical,
@@ -187,6 +195,14 @@ export const parseBinaryTarget = async (
           format: "analysis-database",
         });
       const artifactFormat = await detectArtifactFormat(path, handle, signal);
+      if (artifactFormat !== undefined && dsymPath !== undefined)
+        return err(
+          new BinaryTargetError(
+            path,
+            `dsym_path applies only to Mach-O executable targets; this target is ${artifactFormat}`,
+            { constraint: "debug_companion_rejected" },
+          ),
+        );
       if (artifactFormat !== undefined) {
         const identity = {
           path,
@@ -222,6 +238,8 @@ export const parseBinaryTarget = async (
           dsymPath,
           targetHandle: handle,
           targetSize: metadata.size,
+          architecture: detected.value.architecture,
+          ...(signal === undefined ? {} : { signal }),
         });
         if (!companion.ok)
           return err(

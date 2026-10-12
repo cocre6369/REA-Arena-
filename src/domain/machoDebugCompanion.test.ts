@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   debugCompanionMatches,
+  readMachoUuidEntries,
   readMachoUuids,
 } from "./machoDebugCompanion.js";
 
@@ -96,6 +97,50 @@ describe("Mach-O LC_UUID reading", () => {
     ],
   ])("rejects a %s", (_name, bytes) => {
     expect(readMachoUuids(bytes).ok).toBe(false);
+  });
+});
+
+describe("UUID entry attribution", () => {
+  it("carries the declaring cputype for a thin image", () => {
+    const bytes = withUuidLoadCommand("A1B2C3D4-E5F6-0789-ABCD-EF0123456789");
+    expect(readMachoUuidEntries(bytes)).toEqual({
+      ok: true,
+      value: [
+        {
+          cpuType: 0x0100000c,
+          uuid: "A1B2C3D4-E5F6-0789-ABCD-EF0123456789",
+        },
+      ],
+    });
+  });
+  it("attributes each universal slice UUID to its own cputype", () => {
+    const container = universalWithSlices([
+      withUuidLoadCommand("11111111-1111-1111-1111-111111111111"),
+      withUuidLoadCommand("22222222-2222-2222-2222-222222222222"),
+    ]);
+    const entries = readMachoUuidEntries(container);
+    expect(entries.ok).toBe(true);
+    if (!entries.ok) throw new Error("expected entries");
+    expect(entries.value.map(({ cpuType, uuid }) => [cpuType, uuid])).toEqual([
+      [0x01000007, "11111111-1111-1111-1111-111111111111"],
+      [0x01000007, "22222222-2222-2222-2222-222222222222"],
+    ]);
+  });
+  it("decodes a big-endian thin image with big-endian load commands", () => {
+    const commandSize = 8 + 16;
+    const bytes = Buffer.alloc(32 + commandSize);
+    bytes.writeUInt32BE(0xfeedfacf, 0); // 64-bit big-endian image
+    bytes.writeUInt32BE(0x0100000c, 4);
+    bytes.writeUInt32BE(2, 12);
+    bytes.writeUInt32BE(1, 16); // ncmds
+    bytes.writeUInt32BE(commandSize, 20);
+    bytes.writeUInt32BE(0x1b, 32); // LC_UUID
+    bytes.writeUInt32BE(commandSize, 36);
+    uuidBytes("ABCDEF01-2345-6789-ABCD-EF0123456789").copy(bytes, 40);
+    expect(readMachoUuids(bytes)).toEqual({
+      ok: true,
+      value: ["ABCDEF01-2345-6789-ABCD-EF0123456789"],
+    });
   });
 });
 
