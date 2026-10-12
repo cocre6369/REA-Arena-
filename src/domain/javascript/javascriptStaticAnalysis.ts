@@ -234,10 +234,11 @@ const inspectNode = (
     inspectBundlerBootstrap(source, node, accumulator, bindings);
     inspectBundlerRegistration(source, node, accumulator);
     inspectEsbuildWrapper(source, node, accumulator);
-    inspectCall(source, node, findings);
+    inspectCall(source, node, findings, bindings);
   } else if (t.isOptionalCallExpression(node)) {
-    inspectCall(source, node, findings);
-  } else if (t.isNewExpression(node)) inspectCall(source, node, findings);
+    inspectCall(source, node, findings, bindings);
+  } else if (t.isNewExpression(node))
+    inspectCall(source, node, findings, bindings);
   if (
     (t.isImportDeclaration(node) || t.isExportAllDeclaration(node)) &&
     node.source !== undefined

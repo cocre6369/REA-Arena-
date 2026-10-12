@@ -342,16 +342,16 @@ const isDirectoryIdentity = (node: t.Node | undefined): boolean => {
   );
 };
 
+/** Whether the expression denotes the current module's URL. */
+export const isImportMetaUrl = (node: t.Node | undefined): boolean =>
+  t.isMemberExpression(node) &&
+  t.isMetaProperty(node.object) &&
+  node.object.meta.name === "import" &&
+  node.object.property.name === "meta" &&
+  semanticStaticPropertyName(node.property, node.computed) === "url";
+
 const isFileIdentity = (node: t.Node | undefined): boolean => {
-  if (t.isIdentifier(node, { name: "__filename" })) return true;
-  if (node === undefined) return false;
-  if (
-    t.isMemberExpression(node) &&
-    t.isMetaProperty(node.object) &&
-    node.object.meta.name === "import" &&
-    node.object.property.name === "meta" &&
-    semanticStaticPropertyName(node.property, node.computed) === "url"
-  )
+  if (t.isIdentifier(node, { name: "__filename" }) || isImportMetaUrl(node))
     return true;
   if (!t.isCallExpression(node)) return false;
   const name = calleeName(node.callee);
