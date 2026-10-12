@@ -167,6 +167,12 @@ export const SCOPES = {
     "scripts/fixtures/generate-mitmproxy-capture.py",
   ],
   web_runtime: [
+    "scripts/lib/browser-worker-e2e.mjs",
+    "scripts/fixtures/browser-worker-site.mjs",
+    "src/browser/CdpWorkerCapture.ts",
+    "src/browser/CdpPageCapture.ts",
+    "src/domain/browserObservationSchemas.ts",
+    "src/domain/browserObservation.ts",
     ".github/workflows/real-web-runtime.yml",
     "scripts/verify-browser-runtime.mjs",
     "scripts/lib/browser-runtime-*.mjs",

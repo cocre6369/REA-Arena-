@@ -94,6 +94,12 @@ export const listBrowserTargetsInputSchema = z.strictObject({
 const inspectWebPageInputFacts = {
   ...browserInput,
   target_id: z.string().trim().min(1),
+  worker_target_ids: z
+    .array(z.string().trim().min(1))
+    .optional()
+    .describe(
+      "Explicit worker targets to observe within allowed origins, including shared workers whose page ownership is unknown",
+    ),
   observation_ms: z.number().int().min(0).default(500),
   include_accessibility_text: z.boolean().default(false),
   include_console_text: z.boolean().default(false),

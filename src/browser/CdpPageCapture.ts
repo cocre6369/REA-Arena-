@@ -24,7 +24,7 @@ import {
   delayWithCancellation,
 } from "./CdpCaptureValues.js";
 import { captureScripts } from "./CdpPageCaptureScripts.js";
-import { captureWorkers } from "./CdpPageCaptureWorkers.js";
+import { CdpWorkerCapture } from "./CdpWorkerCapture.js";
 import type { WebSourceMapRequest } from "./WebSourceMapFetcher.js";
 
 export interface CaptureContext {
@@ -42,6 +42,7 @@ export interface CaptureContext {
 }
 
 interface CaptureState {
+  readonly workers: CdpWorkerCapture;
   readonly context: CaptureContext;
   readonly events: CdpCaptureEvents;
   readonly allowedOrigins: ReadonlySet<string>;
@@ -76,6 +77,7 @@ export const capturePage = async (
     events.ingest(event);
   });
   const state: CaptureState = {
+    workers: new CdpWorkerCapture(context, allowedOrigins, [], events),
     context,
     events,
     allowedOrigins,
@@ -94,7 +96,11 @@ export const capturePage = async (
   };
   try {
     return await captureAuthorizedPage(state);
+  } catch (cause) {
+    state.workers.check();
+    throw cause;
   } finally {
+    await state.workers.close();
     removeListener();
   }
 };
@@ -142,10 +148,8 @@ const captureAuthorizedPage = async (
     resources,
     frameIds: new Set(frames.map((frame) => frame.frame_id)),
   });
-  const workers = await captureWorkers(
-    { context, allowedOrigins, limitations, events: state.events },
-    new Set(frames.map((frame) => frame.frame_id)),
-  );
+  const workers = await state.workers.finish();
+  limitations.push(...state.workers.limitations);
   const storageCapture = await captureStorage(
     context,
     attachedUrl,
@@ -232,7 +236,6 @@ const authorizeObservationWindow = async (
 ): Promise<void> => {
   const { context, allowedOrigins, events } = state;
   const { connection, sessionId, signal } = context;
-  await report(context.progress, 1, "Enabling passive CDP domains");
   await connection.send("Page.enable", {}, sessionId, signal);
   const initialFrameResult = await authorizedMainFrame({
     connection: context.connection,
@@ -246,11 +249,12 @@ const authorizeObservationWindow = async (
     throw new BrowserObservationError("inspect_web_page", "target_not_allowed");
   events.beginAuthorizedFrame(mainFrame.frame_id);
   await enableObservationDomains(connection, sessionId, signal);
+  await state.workers.start();
   await report(context.progress, 2, "Observing page events");
   await delayWithCancellation(
     context.input.observation_ms,
     context.operation,
-    signal,
+    state.workers.signal,
   );
   if (events.originViolation)
     throw new BrowserObservationError("inspect_web_page", "target_not_allowed");

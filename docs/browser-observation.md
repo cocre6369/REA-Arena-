@@ -217,3 +217,49 @@ The browser provider deliberately does not expose generic CDP commands, `Runtime
 This feature is not a browser sandbox or network containment mechanism. The attached page and browser continue running with their existing privileges and may make external requests independently of REA. CDP gives deep access to the selected browser profile, so use a dedicated profile, include only origins you intend to inspect, and treat other same-user processes as outside this boundary.
 
 Response metadata normalizes a `Referrer-Policy` fallback list to its last recognized nonempty policy, including mixed-case tokens. Unknown policy names are skipped; malformed token syntax and lists without a recognized policy remain `null`. This reports the response's declared policy, not the effective policy of a document or an inferred browser default.
+
+## Worker observations
+
+`inspect_web_page` observes related dedicated workers and Service Workers without
+pausing or executing target code. `workers[].observation` records the observed
+page relationship, worker-scoped execution contexts and script IDs, lifecycle
+transitions, network requests and capture completeness. Selected script sources
+carry the same self-verifying UTF-8 artifacts as page scripts.
+
+Chrome's page-session attachment proves a dedicated-worker relationship;
+Service Worker `controlledClients` proves a client relationship. Same-origin
+workers without either proof remain `ownership: "unknown"`. Their metadata is
+retained, but their sources and runtime activity are not collected by default.
+Service Worker version events retain `controls_page`; the ownership field records
+the relationship observed during capture. Once that client relationship ends,
+further activity is excluded unless the worker was explicitly selected.
+Shared workers may serve multiple pages: their URL never establishes an owner.
+To observe one explicitly, use a returned worker target ID:
+
+```json
+{
+  "name": "inspect_web_page",
+  "arguments": {
+    "cdp_endpoint": "http://127.0.0.1:9222",
+    "target_id": "PAGE_ID",
+    "worker_target_ids": ["SHARED_WORKER_ID"],
+    "include_script_sources": true,
+    "observation_ms": 2000
+  }
+}
+```
+
+The CLI equivalent adds `--worker-target-ids SHARED_WORKER_ID`.
+Explicit selection retains unknown page ownership and still enforces the allowed
+origin boundary. The first observation progress notification is emitted after
+the page and initial worker observers are armed; external actions can follow it.
+
+Only the observation window is covered. Loaded source is not execution coverage;
+registration alone is not cache delivery. `network.requests[].response_source`
+preserves the browser's actual Service Worker/disk-cache response flags and
+Service Worker response-source classification, with absent fields left unknown.
+Worker requests are scoped to that worker; request IDs must not be joined across
+worker sessions. Worker attachments and domains are released on completion,
+failure and cancellation; REA does not terminate workers or the user-owned page.
+Worker capture uses the existing runtime limits (8 MiB observed event metadata,
+32 MiB retained source), with an explicit failure rather than silent truncation.

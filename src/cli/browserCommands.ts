@@ -81,6 +81,7 @@ const registerPageInspection = (
           cdp_endpoint: args.endpoint,
           allowed_origins: options.allowedOrigins,
           target_id: args.targetId,
+          worker_target_ids: options.workerTargetIds,
           observation_ms: options.observationMs,
           include_accessibility_text: options.includeAccessibilityText,
           include_console_text: options.includeConsoleText,
@@ -111,6 +112,7 @@ const registerBundleAnalysis = (
     }),
     options: z.object({
       ...browserScopeOptions,
+      workerTargetIds: browserPageInspectionOptions.shape.workerTargetIds,
       observationMs: observationDuration(500),
       fetchSourceMaps: z
         .boolean()
@@ -126,6 +128,7 @@ const registerBundleAnalysis = (
           target_id: args.targetId,
           observation_ms: options.observationMs,
           include_script_sources: true,
+          worker_target_ids: options.workerTargetIds,
           fetch_source_maps: options.fetchSourceMaps,
         });
         if (!parsed.success)
