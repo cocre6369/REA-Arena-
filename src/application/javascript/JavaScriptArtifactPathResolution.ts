@@ -188,11 +188,14 @@ const contextualCandidate = (
       : input.declaredPath;
   if (context === "html-reference") return htmlCandidate(input);
   if (context === "module-specifier") {
-    const fileUrl = fileUrlPath(declared);
+    const fileUrl =
+      input.moduleKind === "require" ? undefined : fileUrlPath(declared);
     if (fileUrl !== undefined) return fileUrl;
     if (hasScheme(declared))
       return unresolvedCandidate("external", [
-        "URL and Node builtin schemes are outside static artifact module resolution.",
+        input.moduleKind === "require" && declared.startsWith("file:")
+          ? "CommonJS require() does not decode file URL strings into local artifact filenames."
+          : "URL and Node builtin schemes are outside static artifact module resolution.",
       ]);
     if (!declared.startsWith(".") && !declared.startsWith("/"))
       return bareModuleCandidate(input);
