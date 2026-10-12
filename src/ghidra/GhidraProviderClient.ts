@@ -20,7 +20,10 @@ import {
   sameGhidraLanguageOverride,
 } from "./GhidraAnalysisProfile.js";
 import type { AnalysisProfileCommitment } from "../domain/analysisProfile.js";
-import type { BinaryTarget } from "../domain/binaryTargetTypes.js";
+import {
+  isMachOFormat,
+  type BinaryTarget,
+} from "../domain/binaryTargetTypes.js";
 import {
   AnalysisCancelledError,
   AnalysisArtifactChangedError,
@@ -566,6 +569,11 @@ export const createGhidraProviderClient = (input: {
         ? (target.sourcePath ?? target.path)
         : target.path,
     targetSha256: target.sha256,
+    ...(target.format !== "mach-o" && target.format !== "mach-o-universal"
+      ? {}
+      : target.debugCompanion === undefined
+        ? {}
+        : { debugCompanion: target.debugCompanion }),
     transport:
       installation.platform === "win32"
         ? "authenticated-loopback-tcp"

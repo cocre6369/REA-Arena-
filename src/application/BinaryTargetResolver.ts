@@ -15,7 +15,12 @@ import {
   sameRegularFileState,
 } from "../filesystem/RegularFile.js";
 import { AnalysisCancelledError } from "../domain/analysisErrorCore.js";
-import type { BinaryTarget } from "../domain/binaryTargetTypes.js";
+import {
+  isMachOFormat,
+  type BinaryTarget,
+  type MachODebugCompanion,
+} from "../domain/binaryTargetTypes.js";
+import { admitDebugCompanion } from "./DebugCompanionAdmission.js";
 import { err, ok, type Result } from "../domain/result.js";
 import { readMipsElfMetadata } from "./MipsElfMetadata.js";
 import {
@@ -52,6 +57,8 @@ export interface BinaryTargetResolverOptions {
   readonly formatHint?: ExecutableFormatHint;
   readonly architecture?: BinaryArchitecture;
   readonly entryPoint?: string;
+  /** Caller-selected dSYM bundle; admitted only for Mach-O executable targets. */
+  readonly dsymPath?: string;
   readonly signal?: AbortSignal;
 }
 
@@ -69,6 +76,15 @@ export const parseBinaryTarget = async (
   const cwd = options.cwd ?? process.cwd();
   const hostArchitecture = options.hostArchitecture ?? process.arch;
   const { targetKind, formatHint, signal, architecture, entryPoint } = options;
+  const dsymPath = options.dsymPath;
+  if (dsymPath !== undefined && formatHint !== undefined)
+    return err(
+      new BinaryTargetError(
+        isAbsolute(dsymPath) ? dsymPath : resolve(cwd, dsymPath),
+        "dsym_path applies only to detected Mach-O executable targets, not to explicit headerless formats",
+        { constraint: "debug_companion_rejected" },
+      ),
+    );
   const candidate = isAbsolute(input) ? input : resolve(cwd, input);
   try {
     throwIfTargetResolutionCancelled(signal);
@@ -192,6 +208,29 @@ export const parseBinaryTarget = async (
             constraint: "file_format_rejected",
           }),
         );
+      let debugCompanion: MachODebugCompanion | undefined;
+      if (dsymPath !== undefined) {
+        if (!isMachOFormat(detected.value.format))
+          return err(
+            new BinaryTargetError(
+              path,
+              `dsym_path applies only to Mach-O executable targets; this target is ${detected.value.format}`,
+              { constraint: "debug_companion_rejected" },
+            ),
+          );
+        const companion = await admitDebugCompanion({
+          dsymPath,
+          targetHandle: handle,
+          targetSize: metadata.size,
+        });
+        if (!companion.ok)
+          return err(
+            new BinaryTargetError(path, companion.error.reason, {
+              constraint: "debug_companion_rejected",
+            }),
+          );
+        debugCompanion = companion.value;
+      }
       return ok({
         path,
         sourcePath: process.platform === "win32" ? candidate : canonical,
@@ -199,6 +238,9 @@ export const parseBinaryTarget = async (
         sha256: await sha256Handle(handle, path, metadata, signal),
         kind: "executable",
         ...detected.value,
+        ...(debugCompanion === undefined
+          ? {}
+          : { debugCompanion: { ...debugCompanion } }),
       });
     } finally {
       await handle.close();
