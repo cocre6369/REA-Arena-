@@ -402,10 +402,11 @@ const resolveReference = (
           context.filesByPath,
           reference.kind === "require"
             ? "require"
-            : reference.kind === "static-import" ||
-                reference.kind === "dynamic-import"
-              ? "import"
-              : undefined,
+            : reference.kind === "dynamic-import"
+              ? "dynamic-import"
+              : reference.kind === "static-import"
+                ? "import"
+                : undefined,
         );
   if (path === null) return null;
   const file = context.filesByPath.get(path);

@@ -1,4 +1,5 @@
 import { posix } from "node:path";
+import { typescriptSourceModuleKind } from "../TypeScriptSourceModuleKind.js";
 
 import {
   compareUnicodeCodePoints,
@@ -424,7 +425,8 @@ const moduleFormat = (
 ): "commonjs" | "esm" | "mixed" | "unknown" => {
   const extension = posix.extname(path).toLowerCase();
   if (extension === ".mjs") return "esm";
-  if (extension === ".cjs") return "commonjs";
+  if (extension === ".cjs" || typescriptSourceModuleKind(path) === "require")
+    return "commonjs";
   const esm = ir.moduleLinks.some(({ kind }) =>
     ["import", "export", "re-export"].includes(kind),
   );

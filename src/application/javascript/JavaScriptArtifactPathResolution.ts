@@ -20,6 +20,7 @@ import {
   lookupExactPackageImport,
 } from "../../domain/javascript/javascriptPackageImportAliases.js";
 import { typescriptEmittedSourceCandidates } from "../TypeScriptEmittedSourceCandidates.js";
+import { typescriptSourceModuleKind } from "../TypeScriptSourceModuleKind.js";
 
 type ArtifactPathResolutionContext =
   | "package-entrypoint"
@@ -60,8 +61,8 @@ export interface ResolveArtifactPathInput {
   readonly context: ArtifactPathResolutionContext;
   readonly files: ReadonlyMap<string, JavaScriptArtifactFile>;
   readonly htmlBaseHref?: string | null;
-  /** Import/require semantics; runtime resource paths omit this provenance. */
-  readonly moduleKind?: "import" | "require";
+  /** Declared loader syntax; dynamic imports retain ESM lookup in CTS files. */
+  readonly moduleKind?: "import" | "require" | "dynamic-import";
 }
 
 const EXTENSIONS = [
@@ -108,7 +109,15 @@ type CandidateResolution =
 export const resolveArtifactPathByContext = (
   input: ResolveArtifactPathInput,
 ): ArtifactPathResolution => {
-  const resolution = resolvePath(input);
+  const resolution = resolvePath(
+    input.moduleKind === "dynamic-import"
+      ? { ...input, moduleKind: "import" }
+      : input.context === "module-specifier" &&
+          input.moduleKind === "import" &&
+          typescriptSourceModuleKind(input.sourcePath) === "require"
+        ? { ...input, moduleKind: "require" }
+        : input,
+  );
   return resolution.status === "resolved"
     ? {
         declared_path: input.declaredPath,

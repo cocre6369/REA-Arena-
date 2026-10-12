@@ -347,7 +347,7 @@ export const resolveArtifactPath = (
   specifier: string,
   sourcePath: string,
   files: ReadonlyMap<string, JavaScriptArtifactFile>,
-  moduleKind?: "import" | "require",
+  moduleKind?: "import" | "require" | "dynamic-import",
 ): string | null =>
   resolveArtifactPathByContext({
     declaredPath: specifier,
