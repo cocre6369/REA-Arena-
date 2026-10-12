@@ -57,6 +57,18 @@ describe("function comparison reconstruction MCP integration", () => {
         const comparison = parseEvidence(compared.structuredContent);
         expect(comparison.normalized_result).toMatchObject({
           status: comparisonStatus,
+          dimensions: expect.arrayContaining(
+            ["pseudocode", "assembly"].map((dimension) =>
+              expect.objectContaining({
+                dimension,
+                limitations: expect.arrayContaining([
+                  expect.stringContaining(
+                    "without address or generated-name normalization",
+                  ),
+                ]),
+              }),
+            ),
+          ),
         });
         expect(comparison.parameters).toEqual({
           left_evidence_id: left.evidence_id,

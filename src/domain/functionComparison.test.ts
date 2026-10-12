@@ -426,6 +426,46 @@ describe("function comparison unresolved text", () => {
   });
 });
 
+it("qualifies exact text changes caused by relocated provider labels", () => {
+  const left = observe(
+    "2",
+    functionDossierSchema.parse({
+      ...dossier("return FUN_00001010(DAT_00001020) % 3;", "0x1000"),
+      assembly: ["0x1000 call FUN_00001010", "0x1004 ret"],
+    }),
+  );
+  const right = observe(
+    "3",
+    functionDossierSchema.parse({
+      ...dossier("return FUN_00002010(DAT_00002020) % 3;", "0x2000"),
+      assembly: ["0x2000 call FUN_00002010", "0x2004 ret"],
+    }),
+  );
+  const comparison = compareFunctions(left, right);
+  for (const name of ["pseudocode", "assembly"]) {
+    const dimension = comparison.dimensions.find(
+      ({ dimension }) => dimension === name,
+    );
+    expect(dimension).toMatchObject({
+      status: "changed",
+      limitations: expect.arrayContaining([
+        expect.stringContaining(
+          "layout-only differences do not establish a behavior change",
+        ),
+      ]),
+    });
+    expect(dimension?.left_digest).not.toBe(dimension?.right_digest);
+  }
+  expect(
+    comparison.dimensions.find(({ dimension }) => dimension === "cfg"),
+  ).toMatchObject({ status: "unchanged" });
+  for (const dimension of comparison.dimensions)
+    expect(dimension.evidence_links).toEqual([
+      left.evidence_id,
+      right.evidence_id,
+    ]);
+});
+
 describe("function comparison", () => {
   it("preserves text changes alongside complete inline dossier facets", () => {
     const result = compareFunctions(
