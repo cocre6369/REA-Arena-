@@ -45,6 +45,7 @@ import {
   type GhidraSessionInfo,
 } from "./GhidraSessionValues.js";
 import { createGhidraTargetSnapshot } from "./GhidraTargetSnapshot.js";
+import { stageGhidraDebugCompanion } from "./GhidraDebugCompanion.js";
 import { readFileHandleChunks } from "../filesystem/readFileHandleChunks.js";
 import { readBoundedFileBytes } from "../process/BoundedFileBytes.js";
 import {
@@ -557,6 +558,31 @@ export class GhidraClient {
         cause,
       );
       return this.#startupFailure(failure);
+    }
+    if (this.#options.debugCompanion !== undefined) {
+      try {
+        const staged = await stageGhidraDebugCompanion(
+          this.#options.debugCompanion,
+          this.#runtimeRoot.path,
+          this.#snapshotPath,
+          { signal: deadline.signal },
+        );
+        this.#targetAdmission =
+          this.#targetAdmission === undefined
+            ? staged
+            : {
+                ...(this.#targetAdmission as Record<string, JsonValue>),
+                ...(staged as Record<string, JsonValue>),
+              };
+      } catch (cause: unknown) {
+        if (deadline.signal.aborted) return this.#startupInterrupted(deadline);
+        const failure = this.#failure(
+          "start",
+          "Ghidra debug companion staging failed",
+          cause,
+        );
+        return this.#startupFailure(failure);
+      }
     }
     if (deadline.signal.aborted) return this.#startupInterrupted(deadline);
     this.#token = randomBytes(32).toString("hex");

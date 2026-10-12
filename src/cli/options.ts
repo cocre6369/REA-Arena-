@@ -10,6 +10,7 @@ import {
 import { analysisProviderSelectorSchema } from "../contracts/providerSelection.js";
 import type { AnalysisProviderSelector } from "../contracts/providerSelection.js";
 import type { Logger } from "pino";
+import { z } from "zod";
 
 export const providerSelectionOption = analysisProviderSelectorSchema
   .optional()
@@ -36,11 +37,20 @@ export const entryPointSelectionOption = rawBinaryEntryPointSchema
     "Caller-supplied load and entry address (0xhex); required with --target-format raw-binary",
   );
 
+/** Caller-selected dSYM bundle; Mach-O targets only, UUID-matched at admission. */
+export const dsymPathSelectionOption = z
+  .string()
+  .optional()
+  .describe(
+    "Absolute path to a .dSYM bundle whose DWARF member carries the Mach-O target's LC_UUID; omission analyzes without debug types",
+  );
+
 /** Shared CLI flags that bind a native target interpretation. */
 export const nativeOpenOptionFields = {
   "target-format": formatSelectionOption,
   architecture: architectureSelectionOption,
   "entry-point": entryPointSelectionOption,
+  "dsym-path": dsymPathSelectionOption,
   provider: providerSelectionOption,
 };
 
@@ -51,6 +61,7 @@ export interface NativeOpenCliFlags {
   readonly "target-format"?: ExecutableFormatHint | undefined;
   readonly architecture?: BinaryArchitecture | undefined;
   readonly "entry-point"?: string | undefined;
+  readonly "dsym-path"?: string | undefined;
 }
 
 export const directAnalysisOptions = (
@@ -60,12 +71,14 @@ export const directAnalysisOptions = (
   formatHint?: ExecutableFormatHint,
   architecture?: BinaryArchitecture,
   entryPoint?: string,
+  dsymPath?: string,
 ) => ({
   logger,
   snapshotPath,
   ...(formatHint === undefined ? {} : { formatHint }),
   ...(architecture === undefined ? {} : { architecture }),
   ...(entryPoint === undefined ? {} : { entryPoint }),
+  ...(dsymPath === undefined ? {} : { dsymPath }),
   ...(providerId === undefined ? {} : { providerId }),
 });
 
@@ -81,4 +94,5 @@ export const directAnalysisOptionsFromCli = (
     options["target-format"],
     options.architecture,
     options["entry-point"],
+    options["dsym-path"],
   );
