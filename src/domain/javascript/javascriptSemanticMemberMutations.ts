@@ -1,4 +1,5 @@
 import * as t from "@babel/types";
+import { semanticRequireOrigin } from "./javascriptSemanticRequireOrigin.js";
 
 import {
   resolveSemanticBindingState,
@@ -835,6 +836,11 @@ const observableMutationPaths = (
         const selected = pendingExpressions.pop();
         if (selected === undefined) break;
         const { expression, observer } = selected;
+        if (semanticRequireOrigin(expression, state) !== undefined) {
+          (observer.origins ??= new Set()).add("opaque");
+          schedule(observer);
+          continue;
+        }
         // Keep class/getter projections distinct so cycle pruning does not
         // discard observable escapes through a shared getter result.
         if (
